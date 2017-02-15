@@ -1,4 +1,0 @@
-# When to use Squidex?
-
-
-
