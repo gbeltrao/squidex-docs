@@ -2,18 +2,17 @@
 
 ## Introduction
 
-* [What is Squidex?](01-introduction/01-what-is-squidex.md)
-* [When to use Squidex?](01-introduction/02-when-to-use-squidex.md)
+* [What is Squidex?](README.md)
 
 ## Getting Started
 
-* [Developing](02-getting-started/01-developing.md)
-* [Installation](02-getting-started/02-Installation.md)
+* [Developing](01-getting-started/01-developing.md)
+* [Installation](01-getting-started/02-Installation.md)
 
 ## Architecture
 
-* [Overview](03-architecture/01-overview.md)
+* [Overview](02-architecture/01-overview.md)
 
 ## Next
 
-* [Roadmap](04-next/01-roadmap.md)
+* [Roadmap](03-next/01-roadmap.md)
