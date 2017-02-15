@@ -1,9 +1,11 @@
 # Summary
 
-## Overview
+## Introduction
 
-* [My Awesome API](README.md)
+* [What is Squidex?](README.md)
+* When to use Squidex?
 
-## Methods
+## Introduction
 
 * [Defining Methods](methods.md)
+
