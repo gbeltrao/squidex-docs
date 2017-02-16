@@ -1,0 +1,1 @@
+Define who in which languages your content is managed.

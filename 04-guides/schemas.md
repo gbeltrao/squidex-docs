@@ -1,0 +1,1 @@
+A schema defines the structure of the content.
