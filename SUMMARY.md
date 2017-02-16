@@ -15,10 +15,10 @@
 
 ## Guides
 
-* [Clients](guides/clients.md)
-* [Contributors](guides/contributors.md)
-* [Languages](guides/languages.md)
-* [Schemas](guides/schemas.md)
+* [Clients](04-guides/clients.md)
+* [Contributors](04-guides/contributors.md)
+* [Languages](04-guides/languages.md)
+* [Schemas](04-guides/schemas.md)
 
 ## Next
 
