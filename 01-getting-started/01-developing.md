@@ -24,7 +24,7 @@ We also provide ready to use docker configurations: [https://github.com/squidex/
 Squidex has two parts:
 
 1. The frontend, written in [Angular](https://angular.io) and using [Webpack2](https://webpack.js.org/)
-2. The backend, written in ASP.NET Core
+2. The backend, written in [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/)
 
 You have to run both indendently. It might be a little bit annoying but it reduces the startup time, especially when you want to rerun the backend after you made some changes. Open two terminals and run the following commands to start the frontend and the backend.
 
