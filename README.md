@@ -2,7 +2,7 @@
 
 # What is Squidex?
 
-> A content management platform for all kind of content.
+> A content management platform for all kinds of content.
 
 Squidex is a content management platform to manage all your content, for example:
 
