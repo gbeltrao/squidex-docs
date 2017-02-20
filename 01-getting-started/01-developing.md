@@ -38,7 +38,7 @@ You have to run both indendently. It might be a little bit annoying but it reduc
 
 Once the dev server is running, it listens to file changes and recompiles the app automatically. Have an eye to the terminal, because it also shows error, when it cannot compile the typescript code.
 
-### How to run the API?
+### How to run the Backend?
 
 1. `cd src/Squidex/Squidex` (Go to the web application project)
 2. `dotnet restore` (Install all dependencies)
