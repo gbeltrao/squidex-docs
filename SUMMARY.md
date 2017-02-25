@@ -12,9 +12,11 @@
 ## Architecture
 
 * [Overview](02-architecture/01-overview.md)
+* [API](02-architecture/02-api.md)
 
 ## Guides
 
+* [API](04-guides/api.md)
 * [Clients](04-guides/clients.md)
 * [Contributors](04-guides/contributors.md)
 * [Languages](04-guides/languages.md)
