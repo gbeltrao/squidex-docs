@@ -2,18 +2,18 @@
 
 # What is Squidex?
 
-> A content management platform for all kinds of content.
+> A content management hub for all your data.
 
 Squidex is a content management platform to manage all your content, for example:
 
-* Dynamic elements for your mobile apps
-* Blog posts and articles for your website
-* Configuration data for your backend
-* Rich and structured data for your application
+* Dynamic elements for your mobile apps.
+* Blog posts and articles for your website.
+* Configuration data for your backend.
+* Rich and structured data for your application.
 
 ## How does it work?
 
-The core of squidex is a web service. It provides API's to manage the structure of your content, languages configuration and settings and of course the content itself. You can consume these content from your backend, mobile app, website and other other client application. Of course we also provide a rich user interface for content management.
+The core of squidex is a web service. It provides API's to manage the structure of your content, languages, settings and of course the content itself. You can consume the content from your backend, mobile apps, website and other other client applications. Of course we also provide a rich user interface for content management.
 
 ## Event Sourcing
 
@@ -23,4 +23,10 @@ We use event sourcing to store all information. Instead of just holding the actu
 
 We think it is impossible to develop a system that is able to handle every kind of queries in a fast and efficient way. You know best what technology you need for your business case. Think about sql database servers. You need to configure indices by yourself, because creating them automatically is a very hard problem. If you need your content in another representation or in another storage you can subscribe to the content events and push your content to another database, whenever it has changed. For example: If you build a travel portal you can manage your hotels in squidex. To allow your users to search for hotels you can push the data to elastic search to make use of the full text search capabilities.
 
+## Contact Us
 
+You have the following options to contact us:
+
+* Join our gitter channel: [https://gitter.im/squidex-cms](https://gitter.im/squidex-cms/)
+* Join our slack group: [http://squidex.slack.com/](http://squidex.slack.com/)
+* Write us an email: [mailto:hello@squidex.io](mailto:hello@squidex.io)
