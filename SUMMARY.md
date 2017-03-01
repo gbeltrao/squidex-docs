@@ -12,7 +12,6 @@
 ## Architecture
 
 * [Overview](02-architecture/01-overview.md)
-* [API](02-architecture/02-api.md)
 
 ## Guides
 
