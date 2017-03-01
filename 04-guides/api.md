@@ -37,9 +37,9 @@ If the field is not localizable we use `iv` (Invariant Language) as a key.
 When you change the field to be localizable the value will become the value for the master language, depending what the master language is at this point of time.
 
 ## OData Conventions
-The squidex API partially supports the OData url convention to query data. 
+The squidex API supports the OData url convention to query data. 
 
-We support the following url options.
+We support the following query options.
 
 ### $top
 
