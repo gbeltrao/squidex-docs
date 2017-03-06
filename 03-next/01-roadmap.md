@@ -14,12 +14,8 @@ It is very likely that our plans will change when we get the first user feedback
 
 ### Version 1.1 (More Fields)
 
-* Rating editor for numbers
-* Markdown editor for string.
-* Wysiwyg editor for strings, e.g [TinyMCE](https://www.tinymce.com/)
-* Datetime fields including editors.
-* Time fields including editors.
-* Json fields including editor, e.g [ACE](https://ace.c9.io/).
+* Rating editor for numbers.
+* Toogle button for boolean.
 * Geolocation fields including editor with Google Maps.
 
 ### Version 1.2 (Media Management)
