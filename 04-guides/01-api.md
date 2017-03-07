@@ -89,3 +89,18 @@ e.g. find the top 20 biggest cities by population:
 
 Read more about OData at: http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part2-url-conventions.html
 
+## Consistency
+
+The API uses the eventual consistency. Events are handled in the background as described under [architecture](../02-architecture/01-overview.md). This means that it can take to up a second until the data is available to the query side. Under very high load it can even take more time. If you receive a success status code when you create or update an content you have the guarantee, that it has been written to the database successfully. You can also make another write operation directly, e.g. to publish the content.
+
+### Versioning
+
+The API tracks the version of each content element and provides this information in the `ETag` content header if you make an update (POST, PUT, PATCH) or if you request a single resource. If you request multiple resources, the version is provided as a field to each entry.
+
+You can use this header for two use cases:
+
+1. When you make an update you get the new version. This information can be used to find out if your change has already been written to the read store when you receive the same resource after your update.
+
+2. When you make an update you can use the `If-Match` header to pass the expected version to the API. If the version does not match to the version in the database another user or client has changed the same resource. Then a `412 (Precondition Failed)` status code is returned. You should provide this information to the user and ask if the user wants to reload the data or if the resource should be overwritten (just do not use the `If-Match` header for the second request).
+
+Read more about the If-Match header at: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Match

@@ -15,11 +15,8 @@
 
 ## Guides
 
-* [API](04-guides/api.md)
-* [Clients](04-guides/clients.md)
-* [Contributors](04-guides/contributors.md)
-* [Languages](04-guides/languages.md)
-* [Schemas](04-guides/schemas.md)
+* [API](04-guides/01-api.md)
+* [Troubleshooting](04-guides/02-troubleshooting.md)
 
 ## Next
 
