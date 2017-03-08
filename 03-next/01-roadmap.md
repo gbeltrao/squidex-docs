@@ -8,7 +8,7 @@ But for the next versions we are planing to focus on these major areas:
 2. Better administration tools for user managment and custom accounts without Google Login.
 3. Integration points, for example Webhooks or pushing events to RabbitMq.
 
-It is very likely that our plans will change when we get the first user feedback. We will publish new versions as often as possible and upgrade the version number when we think the new features are stable. We will use [semantic versioning](http://semver.org/).
+It is very likely that our plans will change depending on the user feedback. We use [semantic versioning](http://semver.org/) to indicate if a feature is a breaking change or not.
 
 ## Version 1.X
 

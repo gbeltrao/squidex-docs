@@ -5,6 +5,7 @@ An app is the place for all your content. You can organize your project in one o
 A client is another application that consumes or creates the content. The management user interface is just another client, that uses the same API.
 
 ## Content
+Everything you want to store in squidex. Blog posts, articles, products, users, payment options, settings, feature toggles...
 
 ## Event
 An event is something that happened in the past.
