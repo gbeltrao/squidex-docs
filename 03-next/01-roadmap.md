@@ -14,8 +14,8 @@ It is very likely that our plans will change depending on the user feedback. We 
 
 ### Version 1.1 (More Fields)
 
-* Rating editor for numbers.
-* Toogle button for boolean.
+* ~~Rating editor for numbers.~~ (DONE)
+* ~~Toogle button for boolean.~~ (DONE)
 * Geolocation fields including editor with Google Maps.
 
 ### Version 1.2 (Media Management)
