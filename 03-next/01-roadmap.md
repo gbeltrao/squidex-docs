@@ -16,7 +16,7 @@ It is very likely that our plans will change depending on the user feedback. We 
 
 * ~~Rating editor for numbers.~~ (DONE)
 * ~~Toogle button for boolean.~~ (DONE)
-* Geolocation fields including editor with Google Maps.
+* Geolocation fields including editor with LeafletJS.
 
 ### Version 1.2 (Media Management)
 
