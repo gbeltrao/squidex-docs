@@ -14,9 +14,9 @@ It is very likely that our plans will change depending on the user feedback. We 
 
 ### Version 1.1 (More Fields)
 
-* ~~Rating editor for numbers.~~ (DONE)
-* ~~Toogle button for boolean.~~ (DONE)
-* Geolocation fields including editor with LeafletJS.
+* ~~Rating editor for numbers.~~ (Done)
+* ~~Toogle button for boolean.~~ (Done)
+* ~~Geolocation fields including editor with LeafletJS.~~ (Done)
 
 ### Version 1.2 (Media Management)
 
