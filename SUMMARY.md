@@ -13,14 +13,19 @@
 
 * [Overview](02-architecture/01-overview.md)
 
+## Next
+
+* [Roadmap](03-next/01-roadmap.md)
+
 ## Guides
 
 * [API](04-guides/01-api.md)
 * [Troubleshooting](04-guides/02-troubleshooting.md)
 
-## Next
+## Integrated
 
-* [Roadmap](03-next/01-roadmap.md)
-
-
+* [Clients](05-integrated/clients.md)
+* [Contributors](05-integrated/contributors.md)
+* [Languages](05-integrated/languages.md)
+* [Schemas](05-integrated/schemas.md)
 
