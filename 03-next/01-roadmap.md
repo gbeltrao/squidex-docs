@@ -12,18 +12,18 @@ It is very likely that our plans will change depending on the user feedback. We 
 
 ## Version 1.X
 
-### Version 1.1 (More Fields)
+### Version 1.0.1 (More Fields)
 
 * ~~Rating editor for numbers.~~ (Done)
 * ~~Toogle button for boolean.~~ (Done)
 * ~~Geolocation fields including editor with LeafletJS.~~ (Done)
 
-### Version 1.2 (Media Management)
+### Version 1.0.2 (Media Management)
 
-* Upload media files and other documents.
-* Support for different storages, e.g. file system or azure blobs.
-* Basic image editing (If we can find an open source image editor for javascript).
-* Assign documents to content fields.
+* ~~Upload media files and other assets.~~ (Done)
+* ~~Support for different storages, e.g. file system or azure blobs.~~ (Done)
+* ~~Basic image editing (If we can find an open source image editor for javascript).~~ (Postponed)
+* ~~Assign assets to content fields.~~ (Done)
 
 ### Version 1.3 (Integration)
 
