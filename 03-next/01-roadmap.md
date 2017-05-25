@@ -25,12 +25,12 @@ It is very likely that our plans will change depending on the user feedback. We 
 * ~~Basic image editing (If we can find an open source image editor for javascript).~~ (Postponed)
 * ~~Assign assets to content fields.~~ (Done)
 
-### Version 1.3 (Integration)
+### Version 1.1 (Integration)
 
 * Support for Webhooks
-* Integration of queues like RabbitMq.
+* ~~Integration of queues like RabbitMq.~~
 
-### Version 1.4 (User Management)
+### Version 1.2 (User Management)
 
 * Github login.
 * Internal accounts with registration forms.

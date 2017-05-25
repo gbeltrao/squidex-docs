@@ -19,8 +19,9 @@
 
 ## Guides
 
-* [API](04-guides/01-api.md)
-* [Troubleshooting](04-guides/02-troubleshooting.md)
+* [Localization](04-guides/01-localization.md)
+* [API](04-guides/02-api.md)
+* [Troubleshooting](04-guides/03-troubleshooting.md)
 
 ## Integrated
 

@@ -2,7 +2,7 @@
 
 This guide will explain the installation process. Please contact us in Gitter or Slack if you have issues.
 
-For this guide we say that `$SQUIDEX$` is the path to your local copy of the source code.
+For this guide we define that `$SQUIDEX$` is the path to your local copy of the source code.
 
 ## 1. Make a build
 
@@ -14,7 +14,7 @@ The simplest approach is to run the build with docker. For windows there is a bu
 
 The build script will copy all files for the release to `$SQUIDEX$/publish`. It also contains a docker file, so you can just run the following command to build a docker image:
 
-    docker build $SQUIDEX$/publish -t my/squidex:latest
+    docker build $SQUIDEX$/publish -t my/latest
 
 ### Build it manually
 
@@ -69,7 +69,7 @@ When you are asked to enter the **Authorized redirect URIs** please ensure that 
 
 ### Base Url 
 
-We also need to setup the base url so that the API and the Management UI can create Urls correctly. Change the base url under `squidex:urls:baseUrl`. It is very important that it has the correct host name and protocol.
+We also need to setup the base url so that the API and the Management UI can create Urls correctly. Change the base url under `urls:baseUrl`. It is very important that it has the correct host name and protocol.
 
 ### Https 
 
@@ -82,12 +82,4 @@ It is highly recommended to use https and ssl for security reasons. You don't ha
 
 2. You can use [https://www.cloudflare.com/](https://www.cloudflare.com/) in front of your Squidex installation. It will act as a reverse proxy and handle all incoming traffic. Usually it also caches the output, but there are settings to disable it. But you also need a certificate on your web server if you want to have end to end encryption.
 
-To enforce https you can also set the `squidex:urls:enforeHttps` configuration value to `true`.
-
-### Running in a cluster
-
-If you want to run Squidex in a cluster, there are two settings that are interesting:
-
-1. `squidex:clusterer:type` defines the clusterer. It is basically a set of classes that provide everything you need to run Squidex on multiple hosts. At the moment you can set it to `None` and `Redis`. Redis is needed to establish a communication channel between the hosts using PubSub and to store the encryption keys (Read more about [Data Protection](https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/) in ASP.NET Core).
-
-2. `squidex:handleEvents` defines if the Squidex instance will handle the CQRS events to populate the read stores. It is very important that **exactly one** host handles the events to guarantee that the events are processed in the right order. We recommend that you set this setting to false in the `appsettings.json` file and to overwrite it with an environment variable on one of the machines. If you are using kubernetes you can create a deployment with one instance for your event handler. 
+To enforce https you can also set the `urls:enforeHttps` configuration value to `true`.

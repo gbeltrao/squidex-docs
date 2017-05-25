@@ -6,8 +6,8 @@ We demonstrate the API concepts based on the following example:
 
 Lets assume you have an app `geodata` with two languages (en, de) and a schema `cities` with two fields:
 
-1. `name`: String (Localizable)
-2. `population`: Number (Not Localizable)
+1. `name`: String (localizable)
+2. `population`: Number (not localizable)
 
 Then your content has the following structure in the API:
 
@@ -23,21 +23,21 @@ Then your content has the following structure in the API:
                 "en": "Munich"
             },
             "population": {
-                "sv": 1400000
+                "iv": 1400000
             }
         }
     }
 
 
 ## General structure
-The data of the content to be created or updated.
-            
-Please note that each field is an object with one entry per language. 
-If the field is not localizable we use `iv` (Invariant Language) as a key.
-When you change the field to be localizable the value will become the value for the master language, depending what the master language is at this point of time.
+
+Please note that each field has an partitioning defined. It says how each field is structured. The most simple partitioning is the invariant partitition, which only allows a single key `iv`. 
+If the field is localizable we use the iso codes from the languages that you defined in your app settings as keys.
+
+Read more about it at [here](01-localization.md).
 
 ## OData Conventions
-The squidex API supports the OData url convention to query data. 
+The Squidex API supports the OData url convention to query data. 
 
 We support the following query options.
 
@@ -59,7 +59,7 @@ or combined with top
 
 ### $search
 
-The $search query option allows clients to request entities matching a free-text search expression. We add the data of all fields for all languages to a single field in the database and use this combined field to implement the full text search.
+The $search query option allows clients to request entities matching a free-text search expression. We add the data of all fields for all keys to a single field in the database and use this combined field to implement the full text search.
 
     https://cloud.squidex.io/api/content/geodata/cities?$search=Munich
 
