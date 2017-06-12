@@ -32,11 +32,11 @@ It is very likely that our plans will change depending on the user feedback. We 
 
 ### Version 1.2 (User Management)
 
-* Github login.
-* Internal accounts with registration forms.
+* ~~Github login.~~ (Done)
+* ~~Internal accounts.~~ (Done, but no registration form)
+* ~~Profile settings, e.g. change profile picture and display name.~~ (Partially done)
+* ~~More features for account management.~~ (Partially done)
 * Linking different accounts, e.g. github with googlemail.
-* Profile settings, e.g. change profile picture and display name.
-* More features for account management.
 
 ## Version 2.X (Advanced Schemas)
 
