@@ -26,7 +26,7 @@ Squidex has two parts:
 1. The frontend, written in [Angular](https://angular.io) and using [Webpack2](https://webpack.js.org/)
 2. The backend, written in [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/)
 
-You have to run both indendently. It might be a little bit annoying but it reduces the startup time, especially when you want to rerun the backend after you made some changes. Open two terminals and run the following commands to start the frontend and the backend.
+You have to run both indendently. It might be a little bit annoying but it reduces the startup time, especially when you want to rerun the backend after you made some changes. Open two terminals and run the following commands to start the frontend and the backend. The frontend is proxied by the backend then.
 
 ### How to run the Frontend?
 
@@ -44,4 +44,4 @@ Once the dev server is running, it listens to file changes and recompiles the ap
 2. `dotnet restore` (Install all dependencies)
 3. `dotnet run` (Run the API)
 
-We use webpack for the frontend code. To run the application locally you have to run the api and 
+> Open `http://localhost:5000` to run Squidex.
