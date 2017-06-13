@@ -10,6 +10,7 @@ To work with the source code you need the following tools:
 * [.NET Core SDK](https://www.microsoft.com/net/download/core#/current) (Already part of Visual Studio 2017)
 * [MongoDB](https://www.mongodb.com/)
 * Optionally: [Redis](https://redis.io/download)
+* Optionally: [RabbitMQ](https://www.rabbitmq.com/download.html)
 
 We also provide ready to use docker configurations: [https://github.com/squidex/squidex-docker](https://github.com/squidex/squidex-docker). Just execute the following commands to get a mongodb and redis installation for development:
 
@@ -21,14 +22,11 @@ We also provide ready to use docker configurations: [https://github.com/squidex/
 
 ## How to run the Squidex
 
-Squidex has two parts:
+The management portal is written with [Angular](https://angular.io) and [Webpack2](https://webpack.js.org/). Therefore you have to run the webpack web dev server which automatically detects changes and builds the application, whenever a file is changed. The typescript code and sass files will be compiled. The files for the management portal will be served via `http://localhost:3000`.
 
-1. The frontend, written in [Angular](https://angular.io) and using [Webpack2](https://webpack.js.org/)
-2. The backend, written in [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/)
+The website itself is written in [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/). For the frontend it just provides a single html file which links to the files from the webpack dev server.
 
-You have to run both indendently. It might be a little bit annoying but it reduces the startup time, especially when you want to rerun the backend after you made some changes. Open two terminals and run the following commands to start the frontend and the backend. The frontend is proxied by the backend then.
-
-### How to run the Frontend?
+### How to run the Webpack Dev Server?
 
 1. `cd src/Squidex/Squidex` (Go to the web application project)
 2. `npm i` (Install all dependencies for the frontend)
@@ -36,12 +34,14 @@ You have to run both indendently. It might be a little bit annoying but it reduc
 4. Optionally: `npm test` (Runs the unit tests and listens for changes)
 5. Optionally: `npm run test:coverage` (Runs the unit tests and calculates the test coverage).
 
-Once the dev server is running, it listens to file changes and recompiles the app automatically. Have an eye to the terminal, because it also shows error, when it cannot compile the typescript code.
-
-### How to run the Backend?
+### How to run the Website?
 
 1. `cd src/Squidex/Squidex` (Go to the web application project)
 2. `dotnet restore` (Install all dependencies)
 3. `dotnet run` (Run the API)
 
 > Open `http://localhost:5000` to run Squidex.
+
+You have to run both indendently. The first time it feels redundant and annoying and we also had some code to run the webpack dev server automatically when the application is started. But you will recognize that it takes a minute for the webpack dev server to start. Therefore we decoupled the commands, so that you can keep the webpack dev server running, even when you have to restart the dotnet application.
+
+As the name 'webpack dev server' indicates, it is only used for development. For production we bundle all typescript files, html and sass and add the bundle to the deployment package.
