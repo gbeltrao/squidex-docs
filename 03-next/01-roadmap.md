@@ -27,7 +27,7 @@ It is very likely that our plans will change depending on the user feedback. We 
 
 ### Version 1.1 (Integration)
 
-* Support for Webhooks
+* ~~Support for Webhooks.~~ (Done) (Done)
 * ~~Integration of queues like RabbitMq.~~
 
 ### Version 1.2 (User Management)
