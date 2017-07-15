@@ -30,9 +30,10 @@ The website itself is written in [ASP.NET Core](https://docs.microsoft.com/en-us
 
 1. `cd src/Squidex/Squidex` (Go to the web application project)
 2. `npm i` (Install all dependencies for the frontend)
-3. `npm run dev` (Runs the webpack dev server)
-4. Optionally: `npm test` (Runs the unit tests and listens for changes)
-5. Optionally: `npm run test:coverage` (Runs the unit tests and calculates the test coverage).
+3. `npm rebuild node-sass --force`
+4. `npm run dev` (Runs the webpack vdev server)
+5. Optionally: `npm test` (Runs the unit tests and listens for changes)
+6. Optionally: `npm run test:coverage` (Runs the unit tests and calculates the test coverage).
 
 ### How to run the Website?
 
