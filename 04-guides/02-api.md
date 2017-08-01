@@ -77,6 +77,14 @@ Find all cities with a population or more than 100000 people
 
     https://cloud.squidex.io/api/content/geodata/cities?$filter=data/population/iv gt 100000
 
+
+Find all the term items which belong to a certain vocabulary item: let's say you'd like to `tag` your articles and you'd like to categorize these tags. 
+In this case you would have a `term` schema and a `vocabulary` schema. Each `term` would have a reference field to `vocabulary` 
+with the validation set to only allow a single element. 
+To find only those `term` items which belong to `vocabulary` with id `e46aca5e-5067-408f-b90f-ea441314385a` you would do the following request:
+
+    https://cloud.squidex.io/api/content/testapp/term?$filter=data/vocabulary/iv eq 'e46aca5e-5067-408f-b90f-ea441314385a'
+    
 > Note: You can either use `$search` or `$filter` but not both.
 
 ### $orderby
