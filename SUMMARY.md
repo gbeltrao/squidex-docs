@@ -7,7 +7,8 @@
 ## Getting Started
 
 * [Developing](01-getting-started/01-developing.md)
-* [Installation](01-getting-started/02-installation.md)
+* [Building](01-getting-started/02-building.md)
+* [Installation](01-getting-started/03-installation.md)
 
 ## Architecture
 
