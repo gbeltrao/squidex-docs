@@ -21,3 +21,5 @@ Squidex will make several attempts to send an event:
 6. After 12 hours.
 
 An request will be treated as failed if the response does not return a 2XX status code or when it times out after 2 seconds. Consider internal queues for slow operations.
+
+Events expire after 2 days and will be deleted automatically.
