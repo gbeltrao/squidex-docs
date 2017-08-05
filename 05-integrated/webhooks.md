@@ -6,7 +6,11 @@ Webhooks are endpoints where Squidex will send events for a given schema to:
 * **Updated**: The content item has been saved.
 * **Deleted**: The content item has been deleted.
 
-The secret is used to sign the requests for security reasons. Each request will contain a `X-Signature` header which is calculated the following way: `Sha256(Payload + Secret)`. You can calculate the signature when you receive an event to calculate if the request has been done by Squidex. Do not share the secret.
+The secret is used to sign the requests for security reasons. Each request will contain a `X-Signature` header which is calculated the following way: 
+
+    Sha256(Payload + Secret)
+
+You can calculate the signature when you receive an event to check if the request has been sent by Squidex. Do **not share** the secret.
 
 Squidex will make several attempts to send an event:
 
