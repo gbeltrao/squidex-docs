@@ -85,3 +85,73 @@ You can provide other implementations for repositories, e.g. for Elastic Search 
 * `Squidex.Domain.Apps.Read.Schemas.Repositories.ISchemaRepository`: Stores the schema, including fields and all settings.
 * `Squidex.Domain.Apps.Read.Schemas.Repositories.ISchemaWebhookRepository`: Stores the webhook configurations.
 * `Squidex.Domain.Apps.Read.Schemas.Repositories.IWebhookEventRepository`: Stores the webhook events, like an internal job queue.
+
+## Command Handlers
+
+Command handlers are used to handle commands. They can be compared with ASP.NET Core Middlewares and run in a pipeline.
+
+    namespace Squidex.Infrastructure.CQRS.Commands
+    {
+        public interface ICommandHandler
+        {
+            Task HandleAsync(CommandContext context, Func<Task> next);
+        }
+    }
+
+They accept two parameters. The first is the command context, that also includes a reference to the command. The next is a function to call the next command handler.
+
+### Example 1: Handle command
+
+If you can accept the command, handle it and call `Complete()`.
+
+    class MyHandler : ICommandHandler
+    {
+        public async Task HandleAsync(CommandContext context, Func<Task> next) 
+        {
+            if (context.Command is MyCommand myCommand)
+            {
+                await Handle(myCommand);
+                context.Complete();
+            }
+            else
+            {
+                await next();
+            }
+        }
+    }
+
+### Example 2: Measure Performance
+
+    class MyHandler : ICommandHandler
+    {
+        public async Task HandleAsync(CommandContext context, Func<Task> next) 
+        {
+            var watch = Stopwatch.StartNew();
+
+            try
+            {
+                await next();
+            }
+            finally
+            {
+                watch.Stop();
+
+                Log(watch);
+            }
+        }
+    }
+
+### Example 3: Enrich Command
+
+    class MyHandler : ICommandHandler
+    {
+        public async Task HandleAsync(CommandContext context, Func<Task> next) 
+        {
+            if (context.Command is UserCommand userCommand)
+            {
+                userCommand.UserId = await GetUserIdAsync();
+            }
+
+            await next();
+        }
+    }
