@@ -98,7 +98,7 @@ Command handlers are used to handle commands. They can be compared with ASP.NET 
         }
     }
 
-They accept two parameters. The first is the command context, that also includes a reference to the command. The next is a function to call the next command handler.
+They accept two parameters. The first is the command context, that also includes a reference to the command. The next is a function to call the next command handler. Typical use cases are changes to one domain object, for example default fields for new schemas.
 
 ### Example 1: Handle command
 
@@ -153,5 +153,27 @@ If you can accept the command, handle it and call `Complete()`.
             }
 
             await next();
+        }
+    }
+
+## Event Consumers
+
+Event consumers are invoked when new events are created or when an event consumer is restarted and old events are replayed. You should not raise new events, but of course you can create a new events.
+
+    namespace Squidex.Infrastructure.CQRS.Events
+    {
+        public interface IEventConsumer
+        {
+            // The name of the event consumer to display in the UI.
+            string Name { get; }
+
+            // Filter events by the stream name. Use regular expressions.
+            string EventsFilter { get; }
+
+            // Will be invoked when the event consumer is restarted.
+            Task ClearAsync();
+
+            // Will be called for each new or replayed event.
+            Task On(Envelope<IEvent> @event);
         }
     }
