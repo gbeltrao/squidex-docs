@@ -114,3 +114,5 @@ You can use this header for two use cases:
 2. When you make an update you can use the `If-Match` header to pass the expected version to the API. If the version does not match to the version in the database another user or client has changed the same resource. Then the `412 (Precondition Failed)` status code is returned. You should provide this information to the user and ask if the user wants to reload the data or if the resource should be overwritten (just do not use the `If-Match` header for the second request).
 
 Read more about the If-Match header at: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-Match
+
+> NOTE: Property names with dashes are not supported in OData. Use underscore instead.
