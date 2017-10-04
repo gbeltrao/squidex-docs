@@ -1,4 +1,4 @@
-A contributos is a user who has access to your app.
+A contributor is a user who has access to your app.
 
 You can assign permissions to your users:
 
