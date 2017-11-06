@@ -20,7 +20,7 @@ it will run 4 containers:
 Open the `.env` file and set all variables:
 
 * `SQUIDEX_DOMAIN`: Your domain name
-* `SQUIDEX_ADMINEMAIL`: The email address of the admin user.
+* `SQUIDEX_ADMINUSER`: The email address of the admin user.
 * `SQUIDEX_ADMINPASSWORD`: The password of the admin user (Must contain lowercase, uppercase letter, number and special character.)
 
 ### Troubleshooting
@@ -62,8 +62,8 @@ We use the [ASP.NET Core Configuration](https://docs.microsoft.com/en-us/aspnet/
 These are the most important settings:
 
 * `urls:baseUrl`: The base url under which Squide is running.
-* `identity:adminEmail`: The email address of the admin user.
-* `identity:adminUser`: The password of the admin user (Must contain lowercase, uppercase letter, number and special character.)
+* `identity:adminUser`: The email address of the admin user.
+* `identity:adminPassword`: The password of the admin user (Must contain lowercase, uppercase letter, number and special character.)
 
 Set `identity:googleClient`, `identity:githubClient` and `identity:microsoftClient` to empty to disable authentication with third party providers.
 
