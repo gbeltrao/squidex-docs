@@ -48,4 +48,5 @@ If you don't want to use docker, you can also build it manually. You have to exe
     dotnet restore
     dotnet publish --configuration Release --output "../../publish"
 
+Please note that on windows you might need python installed to be able to build node-sass.
 We recommend to build Squidex with docker, because it ensures that you have a clean environment. Because of the docker [layers](http://bitjudo.com/blog/2014/03/13/building-efficient-dockerfiles-node-dot-js/) the build is not much slower and can be even faster in some situations.
