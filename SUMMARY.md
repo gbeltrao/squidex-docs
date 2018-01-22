@@ -25,6 +25,7 @@
 * [API](04-guides/02-api.md)
 * [Postman](04-guides/04-postman.md)
 * [Troubleshooting](04-guides/03-troubleshooting.md)
+* [Assets](04-guides/05-assets.md)
 
 ## Integrated
 

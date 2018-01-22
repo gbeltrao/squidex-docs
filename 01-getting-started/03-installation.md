@@ -17,11 +17,25 @@ it will run 4 containers:
 * Nginx as Reverse Proxy with Https Termination
 * Nginx Sidecar to provision certificates with LetsEncrypt.
 
+### Steps
+
+#### 1. Edit Settings
+
 Open the `.env` file and set all variables:
 
-* `SQUIDEX_DOMAIN`: Your domain name
+* `SQUIDEX_DOMAIN`: Your domain name, e.g. we use `cloud.squidex.io`
 * `SQUIDEX_ADMINEMAIL`: The email address of the admin user.
-* `SQUIDEX_ADMINPASSWORD`: The password of the admin user (Must contain lowercase, uppercase letter, number and special character.)
+* `SQUIDEX_ADMINPASSWORD`: The password of the admin user (Must contain a lowercase and uppercase letter, a number and a special character.)
+
+#### 2. Create the MongoDB database folder
+
+The data will be stored outside of the docker container to simplify the backups. Create the folder with
+
+    sudo mkdir /var/mongo/db
+
+#### 3. Run the docker-compose file
+
+    docker-compose up -d
 
 ### Troubleshooting
 
