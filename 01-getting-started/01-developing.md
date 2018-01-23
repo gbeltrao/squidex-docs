@@ -22,7 +22,7 @@ We also provide ready to use docker configurations: [https://github.com/squidex/
 
 ## How to run the Squidex
 
-The management portal is written with [Angular](https://angular.io) and [Webpack2](https://webpack.js.org/). Therefore you have to run the webpack web dev server which automatically detects changes and builds the application, whenever a file is changed. The typescript code and sass files will be compiled. The files for the management portal will be served via `http://localhost:3000`.
+The management portal is written with [Angular](https://angular.io) and [Webpack2](https://webpack.js.org/). Therefore you have to run the webpack web dev server which automatically detects changes and builds the application, whenever a file is changed. The typescript code and sass files will be compiled.
 
 The website itself is written in [ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/). For the frontend it just provides a single html file which links to the files from the webpack dev server.
 
