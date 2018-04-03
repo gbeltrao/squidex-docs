@@ -4,13 +4,13 @@ This guide will explain the installation process. Please contact us in Gitter or
 
 ## 1. Create the deployment artifacts
 
-Read [Building](02-building.md) to learn how to create the deployment artifacts.
+Read the [Building](02-building.md) to learn how to create the deployment artifacts.
 
 ## 2. Deploy to Docker
 
 We provide a docker-compose configuration under: https://github.com/Squidex/squidex-docker/blob/master/standalone/docker-compose.yml
 
-it will run 4 containers:
+It will run 4 containers:
 
 * MongoDB
 * Squidex
@@ -23,9 +23,13 @@ it will run 4 containers:
 
 Open the `.env` file and set all variables:
 
+* `SQUIDEX_PROTOCOL`: Keep it unchanged. You can set it to http to disable secure connections.
+* `SQUIDEX_FORCE_HTTPS`: Keep it unchanged. You can set it to false to disable permanent redirects from http to https.
 * `SQUIDEX_DOMAIN`: Your domain name, e.g. we use `cloud.squidex.io`
 * `SQUIDEX_ADMINEMAIL`: The email address of the admin user.
 * `SQUIDEX_ADMINPASSWORD`: The password of the admin user (Must contain a lowercase and uppercase letter, a number and a special character.)
+
+You can keep the other settings empty for now.
 
 #### 2. Create the MongoDB database folder
 
@@ -75,10 +79,16 @@ We use the [ASP.NET Core Configuration](https://docs.microsoft.com/en-us/aspnet/
 
 These are the most important settings:
 
-* `urls:baseUrl`: The base url under which Squide is running.
+* `urls:baseUrl`: The base url under which Squidex is running. It is used to generate hyperlinks and to make redirects with the correct host name. In some environments, squidex is running behind several proxies, e.g. cloudflare, google load balancer and so on. In these cases the original host name might get lost. Therefore we introduced this configuration value.
 * `identity:adminEmail`: The email address of the admin user.
 * `identity:adminPassword`: The password of the admin user (Must contain lowercase, uppercase letter, number and special character.)
 
 Set `identity:googleClient`, `identity:githubClient` and `identity:microsoftClient` to empty to disable authentication with third party providers.
 
 Read the comments of the `appsettings.json` file to understand all configuration options.
+
+### Troubleshooting
+
+#### Login fails with 'Operation failed' message
+
+Please check the logs to see detailed error messages. Typically the login fails, because the `urls:baseUrl` setting has an invalid value. When you login, the frontend tells the identity system where to redirect the user to. The frontent (running on the client) knows the current url and might use `https://squidex.local/client-callback-popup.html`. THe identity system uses the `url:baseUrl` setting to calculate the allowed redirect urls (which is set to `http://localhost:5000` by default). When it has a wrong configuration, the identity system cannot verify the redirect url and rejects the login attempt. Therefore it is very important to ensure that the `urls:baseUrl` config has the right value.
