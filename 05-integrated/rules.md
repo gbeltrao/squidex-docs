@@ -3,6 +3,7 @@ Rules allow you to react to events in your app and to synchronize contents and a
 A rule has two elements:
 
 1. **Trigger**: Define when a rule is executed, for example when a content is created.
+
 2. **Action**: Defines what will be executed when the rule is triggered.
 
 Almost all text settings for actions support placeholder. At the moment the following placehold are supported:
