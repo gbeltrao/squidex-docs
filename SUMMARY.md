@@ -29,9 +29,11 @@
 
 ## Integrated
 
+* [Backups](05-integrated/backups.md)
 * [Clients](05-integrated/clients.md)
 * [Contributors](05-integrated/contributors.md)
 * [Languages](05-integrated/languages.md)
+* [Patterns](05-integrated/patterns.md)
+* [Rules](05-integrated/rules.md)
 * [Schemas](05-integrated/schemas.md)
-* [Webhooks](05-integrated/webhooks.md)
 
