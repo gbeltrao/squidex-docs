@@ -10,6 +10,8 @@ Almost all text settings for actions support placeholder. At the moment the foll
 
 * `$APP_ID`: The id of your app (guid).
 * `$APP_NAME`: The name of your app.
+* `$USER_NAME`: The display name of the user (or client name).
+* `$USER_EMAIL`: The email address of the user (or client name).
 * `$TIMESTAMP_DATE`: The date when the event has happened (usually different from the time when the rule is executed) in the following format: `yyyy-MM-dd`.
 * `$TIMESTAMP_DATETIME`; The date when the event has happened (usually different from the time when the rule is executed) in the following format: `yyyy-MM-dd-hh-mm-ss`.
 
@@ -17,6 +19,7 @@ For *ContentChangedTrigger*:
 
 * `$SCHEMA_ID`: The id of the schema.
 * `$SCHEMA_NAME`: The name of the schema.
+* `$CONTENT_URL`: The url to the content in the administration tool.
 * `$CONTENT_ACTION`: The content event (created, updated, deleted).
 
 Squidex will make several attempts to execute an rule:
