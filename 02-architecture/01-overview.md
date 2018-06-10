@@ -27,7 +27,7 @@ Updating the read stores is asynchronous, but usually it is fast enough and we e
 Squidex is based on the following frameworks and tools:
 
 * ASP.NET Core for 
-* Angular for the Management UI
+* Angular for the management UI
 * MongoDB for the Event Store and the Read Models
 * Redis as PubSub system (Only needed if you run Squidex in a Cluster)
 

@@ -43,7 +43,7 @@ if (ctx.isClient && ctx.data.password.iv) {
 }
 ```
 
-> Please Note: The Management UI logs you out, when you retrieve a 403. Use `reject()` only and `disallow()` for clients.
+> Please Note: The management UI logs you out, when you retrieve a 403. Use `reject()` only and `disallow()` for clients.
 
 ### Use Case #4: Compute field from other values.
 

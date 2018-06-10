@@ -65,7 +65,7 @@ It is very important that you restart IIS after you have installed .NET Core Win
 
 #### HTTP Error 504 - Method not allowed
 
-This can happen when you try to make an API call with the PUT or DELETE Verb. For example when you use the Management UI. The reason is that WebDAV might be installed on your server and it blocks these verbs. You have to add the following lines to the `Web.config` file.
+This can happen when you try to make an API call with the PUT or DELETE Verb. For example when you use the management UI. The reason is that WebDAV might be installed on your server and it blocks these verbs. You have to add the following lines to the `Web.config` file.
 
     <system.webServer>
         <modules runAllManagedModulesForAllRequests="false">
@@ -91,4 +91,4 @@ Read the comments of the `appsettings.json` file to understand all configuration
 
 #### Login fails with 'Operation failed' message
 
-Please check the logs to see detailed error messages. Typically the login fails, because the `urls:baseUrl` setting has an invalid value. When you login, the Management UI tells the identity system where to redirect the user to. The frontent (running on the client) knows the current url and might use `https://squidex.local/client-callback-popup.html`. THe identity system uses the `url:baseUrl` setting to calculate the allowed redirect urls (which is set to `http://localhost:5000` by default). When it has a wrong configuration, the identity system cannot verify the redirect url and rejects the login attempt. Therefore it is very important to ensure that the `urls:baseUrl` config has the right value.
+Please check the logs to see detailed error messages. Typically the login fails, because the `urls:baseUrl` setting has an invalid value. When you login, the management UI tells the identity system where to redirect the user to. The frontent (running on the client) knows the current url and might use `https://squidex.local/client-callback-popup.html`. THe identity system uses the `url:baseUrl` setting to calculate the allowed redirect urls (which is set to `http://localhost:5000` by default). When it has a wrong configuration, the identity system cannot verify the redirect url and rejects the login attempt. Therefore it is very important to ensure that the `urls:baseUrl` config has the right value.

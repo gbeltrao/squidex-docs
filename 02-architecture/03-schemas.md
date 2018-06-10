@@ -9,8 +9,8 @@ You have to publish your schema before you can create content.
 Each field has multiple states:
 
 1. **Locked**: The field cannot be updated or deleted.
-2. **Hidden**: The field will not be returned by the api and only visible in the Management UI.
-3. **Disabled**: The field cannot be manipulated in the Management UI. Do not use it together with the required operator, because you will not be able to create or update content items anymore.
+2. **Hidden**: The field will not be returned by the api and only visible in the management UI.
+3. **Disabled**: The field cannot be manipulated in the management UI. Do not use it together with the required operator, because you will not be able to create or update content items anymore.
 
 ## Field Types
 
