@@ -26,6 +26,8 @@
 * [Postman](04-guides/04-postman.md)
 * [Troubleshooting](04-guides/03-troubleshooting.md)
 * [Assets](04-guides/05-assets.md)
+* [Scripting](04-guides/06-scripting.md)
+* [Custom Editors](04-guides/07-custom-editors.md)
 
 ## Integrated
 
