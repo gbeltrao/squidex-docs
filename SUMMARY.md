@@ -14,6 +14,7 @@
 
 * [Overview](02-architecture/01-overview.md)
 * [Extensions](02-architecture/02-extensions.md)
+* [Schemas](02-architecture/03-schemas.md)
 
 ## Next
 
