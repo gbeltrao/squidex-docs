@@ -9,8 +9,8 @@ You have to publish your schema before you can create content.
 Each field has multiple states:
 
 1. **Locked**: The field cannot be updated or deleted.
-2. **Hidden**: The field will not be returned by the api and only visible in the management portal.
-3. **Disabled**: The field cannot be manipulated in the management portal. Do not use it together with the required operator.
+2. **Hidden**: The field will not be returned by the api and only visible in the Management UI.
+3. **Disabled**: The field cannot be manipulated in the Management UI. Do not use it together with the required operator, because you will not be able to create or update content items anymore.
 
 ## Field Types
 
@@ -20,7 +20,13 @@ Field types define how a field is structured in the API and in the processing pi
 
 ![String](../images/fields/string.png)
 
-A string is the most used field type and can be used for any kind of texts, like product names, descriptions and additional information.
+A string is the most used field type and can be used for any kind of texts, like product names, descriptions and additional information. It is also the most flexible field and the usage depends very much on the editor you are using:
+
+1. **HTML**: With a wysiwyg editor.
+2. **Markdown**: With a markdown editor.
+3. **Singleline text**: With an input control.
+4. **Multiline text**: With a textarea control.
+5. **Selection of predefined values**: With a dropdown control or radio boxes.
 
 #### API representation
 
@@ -162,6 +168,8 @@ Some content items only exist as child content for another content item. For exa
 ### Json
 
 ![Json](../images/fields/json.png)
+
+A json field is for developers. Whenever you have some structured or unstructured content, that you cannot cover with the built in field types or editors you should the json field. You should either write a [custom editor](../04-guides/07-custom-editors.md) when the content editors can edit the field or disable the field when the content for this field comes from an external source. Editing the json manually is fragile and can easily break your processes.
 
 #### API representation
 
