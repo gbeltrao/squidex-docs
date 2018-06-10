@@ -8,22 +8,24 @@ We have implemented an abstract concepts which we call partitioning. It means th
 
 It is easy to understand when you have a look to an content object from the API:
 
-    { 
-        "id": "01",
-        "created": "2017-02-25T19:56:35Z",
-        "createdBy": "...",
-        "lastModified": "2017-02-25T19:56:35Z",
-        "lastModifiedBy": "...",
-        "data": {
-            "name": {
-                "de": "München",
-                "en": "Munich"
-            },
-            "population": {
-                "iv": 1400000
-            }
+```json
+{ 
+    "id": "01",
+    "created": "2017-02-25T19:56:35Z",
+    "createdBy": "...",
+    "lastModified": "2017-02-25T19:56:35Z",
+    "lastModifiedBy": "...",
+    "data": {
+        "name": {
+            "de": "München",
+            "en": "Munich"
+        },
+        "population": {
+            "iv": 1400000
         }
     }
+}
+```
 
 Each partition has a list of allowed keys where one key is called the master key. You have to define a value for the master key, if the field is set to required. Other can be marked as optional, which means that you do not have to define a value, even if the field is required.
 

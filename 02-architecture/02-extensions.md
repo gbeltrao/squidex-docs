@@ -6,23 +6,25 @@ We use the dependency injection (see https://docs.microsoft.com/en-us/aspnet/cor
 
 Our recommendation is to create a custom Autofac Module for your extensions:
 
-    public class MyModule : Module
+```csharp
+public class MyModule : Module
+{
+    private IConfiguration Configuration { get; }
+
+    public StoreModule(IConfiguration configuration)
     {
-        private IConfiguration Configuration { get; }
-
-        public StoreModule(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
-        protected override void Load(ContainerBuilder builder)
-        {
-            builder.RegisterType<SqlEventStore>()
-                .As<IEventStore>()
-                .As<IExternalSystem>()
-                .SingleInstance();
-        }
+        Configuration = configuration;
     }
+
+    protected override void Load(ContainerBuilder builder)
+    {
+        builder.RegisterType<SqlEventStore>()
+            .As<IEventStore>()
+            .As<IExternalSystem>()
+            .SingleInstance();
+    }
+}
+```
 
 ## Infrastructure Extensions
 
@@ -104,76 +106,84 @@ They accept two parameters. The first is the command context, that also includes
 
 If you can accept the command, handle it and call `Complete()`.
 
-    class MyHandler : ICommandHandler
+```csharp
+class MyHandler : ICommandHandler
+{
+    public async Task HandleAsync(CommandContext context, Func<Task> next) 
     {
-        public async Task HandleAsync(CommandContext context, Func<Task> next) 
+        if (context.Command is MyCommand myCommand)
         {
-            if (context.Command is MyCommand myCommand)
-            {
-                await Handle(myCommand);
-                context.Complete();
-            }
-            else
-            {
-                await next();
-            }
+            await Handle(myCommand);
+            context.Complete();
         }
-    }
-
-### Example 2: Measure Performance
-
-    class MyHandler : ICommandHandler
-    {
-        public async Task HandleAsync(CommandContext context, Func<Task> next) 
+        else
         {
-            var watch = Stopwatch.StartNew();
-
-            try
-            {
-                await next();
-            }
-            finally
-            {
-                watch.Stop();
-
-                Log(watch);
-            }
-        }
-    }
-
-### Example 3: Enrich Command
-
-    class MyHandler : ICommandHandler
-    {
-        public async Task HandleAsync(CommandContext context, Func<Task> next) 
-        {
-            if (context.Command is UserCommand userCommand)
-            {
-                userCommand.UserId = await GetUserIdAsync();
-            }
-
             await next();
         }
     }
+}
+```
+
+### Example 2: Measure Performance
+
+```csharp
+class MyHandler : ICommandHandler
+{
+    public async Task HandleAsync(CommandContext context, Func<Task> next) 
+    {
+        var watch = Stopwatch.StartNew();
+
+        try
+        {
+            await next();
+        }
+        finally
+        {
+            watch.Stop();
+
+            Log(watch);
+        }
+    }
+}
+```
+
+### Example 3: Enrich Command
+
+```csharp
+class MyHandler : ICommandHandler
+{
+    public async Task HandleAsync(CommandContext context, Func<Task> next) 
+    {
+        if (context.Command is UserCommand userCommand)
+        {
+            userCommand.UserId = await GetUserIdAsync();
+        }
+
+        await next();
+    }
+}
+```
 
 ## Event Consumers
 
 Event consumers are invoked when new events are created or when an event consumer is restarted and old events are replayed. You should not raise new events, but of course you can create a new events.
 
-    namespace Squidex.Infrastructure.CQRS.Events
+```csharp
+namespace Squidex.Infrastructure.CQRS.Events
+{
+    public interface IEventConsumer
     {
-        public interface IEventConsumer
-        {
-            // The name of the event consumer to display in the UI.
-            string Name { get; }
+        // The name of the event consumer to display in the UI.
+        string Name { get; }
 
-            // Filter events by the stream name. Use regular expressions.
-            string EventsFilter { get; }
+        // Filter events by the stream name. Use regular expressions.
+        string EventsFilter { get; }
 
-            // Will be invoked when the event consumer is restarted.
-            Task ClearAsync();
+        // Will be invoked when the event consumer is restarted.
+        Task ClearAsync();
 
-            // Will be called for each new or replayed event.
-            Task On(Envelope<IEvent> @event);
-        }
+        // Will be called for each new or replayed event.
+        Task On(Envelope<IEvent> @event);
     }
+}
+```

@@ -11,23 +11,24 @@ Lets assume you have an app `geodata` with two languages (en, de) and a schema `
 
 Then your content has the following structure in the API:
 
-    { 
-        "id": "01",
-        "created": "2017-02-25T19:56:35Z",
-        "createdBy": "...",
-        "lastModified": "2017-02-25T19:56:35Z",
-        "lastModifiedBy": "...",
-        "data": {
-            "name": {
-                "de": "München",
-                "en": "Munich"
-            },
-            "population": {
-                "iv": 1400000
-            }
+```json
+{ 
+    "id": "01",
+    "created": "2017-02-25T19:56:35Z",
+    "createdBy": "...",
+    "lastModified": "2017-02-25T19:56:35Z",
+    "lastModifiedBy": "...",
+    "data": {
+        "name": {
+            "de": "München",
+            "en": "Munich"
+        },
+        "population": {
+            "iv": 1400000
         }
     }
-
+}
+```
 
 ## General structure
 
