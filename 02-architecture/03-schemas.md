@@ -85,7 +85,7 @@ Date and time in the ISO8601 standard. The format is: `YYYY-MM-DDTHH:mm:ss.sssZ`
 
 ![Assets](../images/fields/assets.png)
 
-Asset fields have references to assets.
+Asset fields are used to maintain a list of assset IDs. You can also restrict the number of assets with a minimum and maximum limit, for example when you want to have a single avatar or preview image for a content. You can use the IDs load the asset. Read more about [here](../04-guides/05-assets.md). When you delete an asset a cleanup process will remove the asset id from your contents. This process is executed in the background to improve the performance and it can take several minutes to complete. Therefore it is highly recommended to handle cases where an content has an id to an deleted asset.
 
 #### API representation
 
@@ -102,7 +102,7 @@ Asset fields have references to assets.
 
 ![References](../images/fields/references.png)
 
-References fields are used to model relationship to other content items. For example you could have a schema for products and a schema for product categories. A product has a field with references to the categories it belongs. Both, products and categories can be created, updated and managed independently.
+References fields are used to model relationship to other content items. For example you could have a schema for products and a schema for product categories. A product has a field with references to the categories it belongs to. Both, products and categories can be created, updated and managed independently. Please think about the direction of the reference very carefully. For example a typical product is only in very few categories, but a product category could have thousand of products. Therefore it is not recommended to reference the products from the categories. When you delete an content a cleanup process will remove the referenced id from all contents. This process is executed in the background to improve the performance and it can take several minutes to complete. Therefore it is highly recommended to handle cases where an content has an reference to an deleted content.
 
 #### API representation
 
@@ -141,11 +141,13 @@ Some content items only exist as child content for another content item. For exa
 
 ![Geolocation](../images/fields/geolocation.png)
 
+The geolocation field represents a tuple of latitude and longitude and is designed to be used in combination with maps. It does not store additional data about the location, such as names, addresses or other information. You have to add additional fields for this purpose.
+
 ```json
 {
     "location": {
         "latitude": 14.9212444,
-        "longitude": 57.21212
+        "longitude": 57.2121432
     }
 }
 ```
@@ -153,6 +155,8 @@ Some content items only exist as child content for another content item. For exa
 ### Tags
 
 ![Tags](../images/fields/tags.png)
+
+Tags are list of strings that are use in the combination tag editor in the Management UI. It is especially useful if you enrich your content with external systems. At the moment the tag editor does not support advanced tag management, such as global lists of tags, renaming and merging of tags.
 
 #### API representation
 
