@@ -4,7 +4,7 @@ In this guide we will introduce you to our localization system.
 
 ## Basic concept
 
-You can define per field if the field is localizable or not. We define this system partitioning, but more that later.
+You can define per field if the field is localizable or not. We call this system partitioning, but more about that later.
 
 It is easy to understand when you have a look to an content object from the API:
 
@@ -33,14 +33,14 @@ Each field value is a set of values that are associated to keys. In javascript i
 * The `population` field is not localizable. Therefore the only allowed key is `iv`, which stands for "invariant".
 * The `name` field is localizable. The allowed keys are the language codes for the languages you have configured.
 
-The language preferences can be configured in the Management UI:
+The languages an fallback rules can be configured in the Management UI:
 
 ![Settings](../images/04/01/settings.png "Settings")
 
 In this example we have 3 languages:
 
 1. **English (en)**: Our master language. Whenever a fields is not available in a language it falls back to the master language.
-2. **Finnish (fi)**: Our newest language. It fallsback to swedish. This means that whenever a value for a localizable fields is not available it falls back to finnish first and the to the master language (English). Finish is also marked as optional, which mean that required fields can be omitted. This is useful when you introduce a new language. You can save contents with require fields even if the field value has not been entered for the optional language.
+2. **Finnish (fi)**: Our newest language. It fallsback to swedish. This means that whenever a value for a localizable fields is not available Squidex tries to resolve the value from swedish first and then from the master language (English). Finish is also marked as optional, which mean that required fields can be omitted. This is useful when you introduce a new language. You can save contents with required fields even if the field value has not been entered for the optional language.
 3. **Swedish (sv)**: One of our main langauges which falls back to to master language (english).
 
 ## How to retrieve the correct languages?
