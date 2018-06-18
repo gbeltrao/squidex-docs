@@ -6,7 +6,7 @@ Squidex is implemented based on the CQRS Pattern:
 
 > CQRS stands for Command Query Responsibility Segregation. It's a pattern that I first heard described by Greg Young. At its heart is the notion that you can use a different model to update information than the model you use to read information.
 > 
-> From: [Martin Fownler](https://martinfowler.com/bliki/CQRS.html)
+> From: [Martin Fowler](https://martinfowler.com/bliki/CQRS.html)
 
 For the write side we use event sourcing:
 
