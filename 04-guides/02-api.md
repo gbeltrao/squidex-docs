@@ -98,6 +98,12 @@ e.g. find the top 20 biggest cities by population:
 
 Read more about OData at: http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part2-url-conventions.html
 
+
+## Published
+
+By default the content api returns unpublished content only. You can use the `X-Unpublished` header to also return draft content.
+
+
 ## Consistency
 
 The API uses the eventual consistency. Events are handled in the background as described under [architecture](../02-architecture/01-overview.md). This means that it can take to up a second until the data is available to the query side. Under very high load it can even take more time. If you receive a success status code when you create or update an content you have the guarantee, that it has been written to the database successfully. You can also make another write operation directly, e.g. to publish the content.
