@@ -12,6 +12,8 @@ In the editor you can define all scripts
 
 Lets have a look to some use cases:
 
+> NOTE: Query scripts are not executed when your query content in the Management UI.
+
 ## Use Cases
 
 ### Use Case #1: Don’t return sensitive information when queried by client.
