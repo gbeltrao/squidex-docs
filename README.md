@@ -27,6 +27,4 @@ We think it is impossible to develop a system that is able to handle every kind 
 
 You have the following options to contact us:
 
-* Join our gitter channel: [https://gitter.im/squidex-cms](https://gitter.im/squidex-cms/)
-* Join our slack group: [http://squidex.slack.com/](http://squidex.slack.com/)
-* Write us an email: [mailto:hello@squidex.io](mailto:hello@squidex.io)
+* Join our support forum: https://support.squidex.io

@@ -1,6 +1,6 @@
 # Installation
 
-This guide will explain the installation process. Please contact us in Gitter or Slack if you have issues.
+This guide will explain the installation process. Please use our support forum for questions: https://support.squidex.io.
 
 ## 1. Create the deployment artifacts
 
