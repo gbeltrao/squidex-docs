@@ -29,6 +29,7 @@
 * [Assets](04-guides/05-assets.md)
 * [Scripting](04-guides/06-scripting.md)
 * [Custom Editors](04-guides/07-custom-editors.md)
+* [Custom Rule Actions](04-guides/07-custom-rule-actions.md)
 
 ## Integrated
 
