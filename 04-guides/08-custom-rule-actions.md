@@ -14,13 +14,13 @@ In this example we will write an action that adds a new line to a predefined fil
 
 We call this action `AppendToFile`.
 
-Typically you want to create an action to communicate with external services, but it shows all essential parts.
+Typically you want to create an action to communicate with external services, but this example shows all essential parts.
 
 ## Step1: Backend code
 
 We create two files in the extension project:
 
-1. `AppendToFileAction.cs`: The action definition and dto. This file and class must be named `<ACTION-TYPE>Action`.
+1. `AppendToFileAction.cs`: The action definition and data model. This file and class must be named `<ACTION-TYPE>Action`.
 2. `AppendToFileActionHandler.cs`: The action handler to execute the rule action.
 
 ![New C# files](../images/04/08/01-csharp-files.png "New C# files")
@@ -68,11 +68,11 @@ This class has several purposes:
 5. It is used to deserialize the json from the API requests.
 6. It is used to serialize and deserialize the rule in the database.
 
-Therefore it is important that the rule action is serializable. We also use the widely adopted Newtonsoft.Json library for that: https://www.newtonsoft.com/json.
+Therefore it is important that the rule action is serializable. We use the widely adopted Newtonsoft.Json library for that: https://www.newtonsoft.com/json.
 
 #### About the Icon:
 
-You have to define the icon as svg content.
+You have to define the icon as svg content. Here are some tipps:
 
 * Use https://icomoon.io/ to find a free icon and to export it as svg.
 * Use https://jakearchibald.github.io/svgomg/ to minize the svg.
@@ -138,13 +138,13 @@ namespace Squidex.Extensions.Actions.WriteToFile
 
 ## Step 2: Frontend code
 
-The frontend code must be written in Angular, but even if you have no experience with angular you can copy and paste all parts from other actions. You do not have to read the full documentation but it might be helpful to read the guide about forms: https://angular.io/guide/reactive-forms
+The frontend code must be written in angular, but you do not have to learn it, you can just copy and paste all essential parts from other actions. You do not have to read the full documentation but it might be helpful to read the guide about forms: https://angular.io/guide/reactive-forms
 
 We have to create an angular component to define the form for our action.
 
 ![New Angular files](../images/04/08/02-ts-files.png "New Angular files")
 
-We create three files for the component (typescript), the styles (sass) and the template (html).
+We create three files: The component (typescript), the styles (sass) and the template (html).
 
 ### Step 2.1. Create the component
 
@@ -221,3 +221,94 @@ textarea {
     height: 150px;
 }
 ```
+
+### Step 2.4: Register the component
+
+Unfortunanetly we have to register the component in several places. It is a restriction from angular and we are looking for a better solution.
+
+![Changed Angular files](../images/04/08/02-ts-changes.png "New Changed files")
+
+#### Step 2.4.1: `rule-wizard.component.html`: Extend the switch statement to render the correct form based on the action type
+
+```html
+<!--
+    rule-wizard.component.html
+-->
+<sqx-modal-dialog ...>
+    <ng-container title>
+        ...
+    </ng-container>
+
+    <ng-container content>
+        ...
+    
+        <ng-container *ngIf="step === 4">
+            <form [formGroup]="actionForm.form" (submit)="saveAction()">
+                <h3 class="wizard-title">{{ruleActions[actionType].display}}</h3>
+
+                <ng-container [ngSwitch]="actionType">
+                    ...                    
+                    <!-- Add our component -->
+                    <ng-container *ngSwitchCase="'AppendToFile'">
+                        <sqx-append-to-file-action
+                            [action]="action"
+                            [actionForm]="actionForm.form"
+                            [actionFormSubmitted]="actionForm.submitted | async">
+                        </sqx-append-to-file-action>
+                    </ng-container>
+                    ...
+                </ng-container>
+            </form>
+        </ng-container>
+    </ng-container>
+
+    <ng-container footer>
+        ...
+    </ng-container>
+</sqx-modal-dialog>
+```
+
+#### Step 2.4.2: `declarations.ts`: Export the new component
+
+```ts
+//
+// declarations.ts
+//
+...
+export * from './pages/rules/actions/algolia-action.component';
+export * from './pages/rules/actions/append-to-file-action.component'; // Add our component
+...
+export * from './pages/rules/actions/webhook-action.component';
+
+...
+```
+
+#### Step 2.4.3: `module.ts`: Import and register the new component
+
+```ts
+//
+// module.ts
+//
+...
+import {
+    ...,
+    AppendToFileActionComponent, // Import the new component
+    ...
+} from './declarations';
+
+...
+
+@NgModule({
+    imports: [
+        ...
+    ],
+    declarations: [
+        ...,
+        AppendToFileActionComponent, // Register the new component.
+        ...
+    ]
+})
+export class SqxFeatureRulesModule { }
+```
+
+Thats it, you are done. I hope to see a pull request for a new action soon.
