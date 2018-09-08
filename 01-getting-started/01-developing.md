@@ -32,8 +32,11 @@ The website itself is written in [ASP.NET Core](https://docs.microsoft.com/en-us
 2. `npm i` (Install all dependencies for the management UI)
 3. `npm rebuild node-sass --force`
 4. `npm run dev` (Runs the webpack vdev server)
-5. Optionally: `npm test` (Runs the unit tests and listens for changes)
-6. Optionally: `npm run test:coverage` (Runs the unit tests and calculates the test coverage).
+
+Optionally:
+
+5. `npm test` (Runs the unit tests and listens for changes)
+6. `npm run test:coverage` (Runs the unit tests and calculates the test coverage).
 
 ### How to run the Website?
 
@@ -46,3 +49,11 @@ The website itself is written in [ASP.NET Core](https://docs.microsoft.com/en-us
 You have to run both indendently. The first time it feels redundant and annoying and we also had some code to run the webpack dev server automatically when the application is started. But you will recognize that it takes a minute for the webpack dev server to start. Therefore we decoupled the commands, so that you can keep the webpack dev server running, even when you have to restart the dotnet application.
 
 As the name 'webpack dev server' indicates, it is only used for development. For production we bundle all typescript files, html and sass and add the bundle to the deployment package.
+
+### Troubleshooting
+
+Here are some tipps when you get build or runtime errors.
+
+1. Check the logs.
+2. Ensure that `ASPNETCORE_ENVIRONMENT` is set to `Development`: https://andrewlock.net/how-to-set-the-hosting-environment-in-asp-net-core/
+3. Ensure that .NET SDK Version `2.1.401` is installed.
