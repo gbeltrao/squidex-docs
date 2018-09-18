@@ -101,7 +101,7 @@ Read more about OData at: http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0
 
 ## Published
 
-By default the content api returns unpublished content only. You can use the `X-Unpublished` header to also return draft content.
+By default the content api returns published content only. You can use the `X-Unpublished` header to also return draft content.
 
 ## Consistency
 
