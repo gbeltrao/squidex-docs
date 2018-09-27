@@ -88,6 +88,53 @@ To find only those `term` items which belong to `vocabulary` with id `e46aca5e-5
     
 > Note: You can either use `$search` or `$filter` but not both.
 
+#### More examples
+
+Date must match value:
+
+    $filter=created eq 1988-01-19T12:00:00Z
+
+Date must match one of many values:
+
+    $filter=created in ('1988-01-19T12:00:00Z', '2011-01-22T08:00:00Z')
+
+Id must match value:
+
+    $filter=id eq B5FE25E3-B262-4B17-91EF-B3772A6B62BB
+    $filter=id in (B5FE25E3-B262-4B17-91EF-B3772A6B62BB, 311DD333-B262-4B17-91EF-B3772A6B62BB)
+
+Name must match string value:
+
+    $filter=firstName eq 'Dagobert'
+
+Boolean must match value:
+
+    $filter=isComicFigure eq true
+
+Age must must be equal to number:
+
+    $filter=age eq 60
+
+String property should start with, ends with or contain a string:
+
+    $filter=startswith(lastName, 'Duck')
+    $filter=endswith(lastName, 'Duck')
+    $filter=contains(lastName, 'Duck')
+
+Different conditions
+
+    $filter=age ne 1 // Not equals
+    $filter=age eq 1 // Equals
+    $filter=age lt 1 // Less than
+    $filter=age le 1 // Less or equals than
+    $filter=age gt 1 // Greater than
+    $filter=age ge 1 // Greater or equals than
+
+Combine different conditions:
+
+    $filter=contains(lastName, 'Duck') eq false and isComicFigure eq true // AND: Both condition must be true
+    $filter=contains(lastName, 'Duck') eq false or  isComicFigure eq true // OR: One condition must be true
+
 ### $orderby
 
 The $orderby system query option allows clients to request resources in a particular order.
