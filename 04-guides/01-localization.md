@@ -120,6 +120,8 @@ X-Flatten: true
 
 It basically means that you can just forward the user language and Squidex will handle the rest.
 
+> NOTE: The headers above are not supported by the graphql endpoint, because in graphql the output should be defined the query only
+
 ## Why do you call it partitioning?
 
 It basically means that the a value is paritioned into multiple subvalues. When we implemented the localization feature we realized that it might be very helpful to extend this feature to other type of keys, for example you could...
