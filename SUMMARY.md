@@ -30,6 +30,7 @@
 * [Scripting](04-guides/06-scripting.md)
 * [Custom Editors](04-guides/07-custom-editors.md)
 * [Custom Rule Actions](04-guides/08-custom-rule-actions.md)
+* [Preview Content](04-guides/09-preview.md)
 
 ## Integrated
 
