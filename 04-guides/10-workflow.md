@@ -46,7 +46,7 @@ We can search for these articles with the following query: `$filter=data/status/
 
 It looks a little bit like technical stuff and our reviewers should not care about this. But we can save the query and give it a friendly name so it can be reused.
 
-![Save Query](../images/04/10/04-save-query.png "Save the query")
+![Save Query](../images/04/10/04-save-query.png "Save the query for our content authors")
 
 The basic setup is already done and it might work well enough in a small team. It requires a little bit of discipline and corporation of all team members. But if we have critical content like product texts or a big team where we don't want to rely that everybody has a good day we need some rules to enforce that our workflow is used correctly.
 
@@ -77,7 +77,7 @@ I will not show everything in this tutorial, it is just too much and the solutio
 
 The solution is scripting. If you click the three dots in the schema editor a menu will pop up with a menu item to the scripting editor. Here you can define scripts that are invoked when a content item is queried, created, updated, deleted or when the status is changed.
 
-![Scripting](../images/04/10/06-scripting.png "The scripting editor")
+![Scripting](../images/04/10/06-scripting.png "The integrated scripting editor")
 
 ### The create script:
 
