@@ -46,7 +46,7 @@ We can search for these articles with the following query: `$filter=data/status/
 
 It looks a little bit like technical stuff and our reviewers should not care about this. But we can save the query and give it a friendly name so it can be reused.
 
-![Save Query](../images/04/10/04-save-query.png "Save the query for our content authors")
+![Save Query](../images/04/10/04-save-query.png "Save the query for content authors")
 
 The basic setup is already done and it might work well enough in a small team. It requires a little bit of discipline and corporation of all team members. But if we have critical content like product texts or a big team where we don't want to rely that everybody has a good day we need some rules to enforce that our workflow is used correctly.
 
