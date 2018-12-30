@@ -87,7 +87,7 @@ Clone the sample and configure the CKE editor as you need it.
 
 Reference: https://squidex.github.io/squidex-samples/editors/country-selector.html
 
-![Country Selector](../images/04/07/02-country-selector.gif "Country Selector")
+![Country Selector](../images/04/07/03-country-selector.gif "Country Selector")
 
 ### 3. Fancytree for product taxonomy
 
@@ -107,5 +107,5 @@ The data format is a list of url like paths for each product category that will 
 ]
 
 ```
-![Product Taxonomy](../images/04/07/03-product-taxonomy.gif "Product Taxonomy")
+![Product Taxonomy](../images/04/07/04-product-taxonomy.gif "Product Taxonomy")
 
