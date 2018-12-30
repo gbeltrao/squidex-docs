@@ -75,7 +75,7 @@ You just have to reference the editor SDK and handle the events. You also have t
 
 Also, we have more example you can use them on your apps.
 
-### 1. Simple CKE Editor:
+### 1. Simple CKE Editor
 
 Reference: https://squidex.github.io/squidex-samples/editors/cke-simple.html
 
@@ -89,7 +89,7 @@ Reference: https://squidex.github.io/squidex-samples/editors/country-selector.ht
 
 ![Country Selector](../images/04/07/03-country-selector.gif "Country Selector")
 
-### 3. Fancytree for product taxonomy
+### 3. Product taxonomy
 
 Reference: https://squidex.github.io/squidex-samples/editors/tags-category.html
 
