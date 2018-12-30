@@ -84,7 +84,7 @@ URL: https://seamys.github.io/squidex-samples/editors/countrySelect.html
 
 URL:https://seamys.github.io/squidex-samples/editors/tags-category.html?url=/squidex-samples/editors/ls.json
 
-You can simply pass a parameter to customize the data of the tree. The data format is as follows
+By customizing the tree's data, you can simply pass a URL parameter to specify the source of the data. The data format is as follows
 
 ``` json
 [
