@@ -68,3 +68,22 @@ Lets see how the code looks like:
 ```
 
 You just have to reference the editor SDK and handle the events. You also have to push the current value to the web application whenever it changes. Validation will happen automatically then.
+
+## More examples
+
+also we have more example you can use it.
+
+### 1. Custom editor for choosing different country.
+
+URL: https://seamys.github.io/squidex-samples/editors/countrySelect.html
+
+![Choosing different country](../images/04/07/02-country-selector.gif "Choosing different country")
+
+
+### 2. Integration with the fancytree jquery plugin for tags fields.
+
+URL:https://seamys.github.io/squidex-samples/editors/tags-category.html
+
+
+![product-taxonomy](../images/04/07/03-product-taxonomy.gif "product-taxonomy")
+
