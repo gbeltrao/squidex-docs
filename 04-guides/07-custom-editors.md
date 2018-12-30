@@ -1,4 +1,6 @@
-# How to write your own editor
+# Custom editors
+
+## How to write your own editor
 
 Custom editors are enabling developers to replace the default editors with HTML5 applications so the editing experience of the Squidex Web App can be customized.
 
@@ -87,7 +89,7 @@ Reference: https://squidex.github.io/squidex-samples/editors/country-selector.ht
 
 ![Country Selector](../images/04/07/02-country-selector.gif "Country Selector")
 
-### 3. Integration with the fancytree jquery plugin for tags field.
+### 3. Fancytree for product taxonomy
 
 Reference: https://squidex.github.io/squidex-samples/editors/tags-category.html
 
