@@ -69,34 +69,41 @@ Lets see how the code looks like:
 
 You just have to reference the editor SDK and handle the events. You also have to push the current value to the web application whenever it changes. Validation will happen automatically then.
 
-## More examples
+## All Examples
 
 Also, we have more example you can use them on your apps.
 
-### 1. Custom editor for choosing different country.
+### 1. Simple CKE Editor:
 
-URL: https://seamys.github.io/squidex-samples/editors/countrySelect.html
+Reference: https://squidex.github.io/squidex-samples/editors/cke-simple.html
 
-![Choosing different country](../images/04/07/02-country-selector.gif "Choosing different country")
+![CKE Editor](../images/04/07/02-cke.png "CKE Editor")
 
+Clone the sample and configure the CKE editor as you need it.
 
-### 2. Integration with the fancytree jquery plugin for tags field.
+### 2. Country selector
 
-URL:https://seamys.github.io/squidex-samples/editors/tags-category.html?url=/squidex-samples/editors/ls.json
+Reference: https://squidex.github.io/squidex-samples/editors/country-selector.html
 
-By customizing the tree's data, you can simply pass a URL parameter to specify the source of the data. The data format is as follows
+![Country Selector](../images/04/07/02-country-selector.gif "Country Selector")
+
+### 3. Integration with the fancytree jquery plugin for tags field.
+
+Reference: https://squidex.github.io/squidex-samples/editors/tags-category.html
+
+The data format is a list of url like paths for each product category that will be converted to a tree strucuture.
 
 ``` json
 [
   "/laptops-and-netbooks/thinkpad-x-series-chromebook-laptops/",
+  "/laptops-and-netbooks/thinkpad-edge-laptops/thinkpad-edge-e330/",
+  "/laptops-and-netbooks/ideapad-s-series-netbooks/ideapad-s210-notebook/",
   "/tablets/a-series/a2109-tablet/",
   "/servers/thinkserver/rs110/6438/",
   "/desktops-and-all-in-ones/thinkcentre-m-series-desktops/m715q/10m2/",
-  "/laptops-and-netbooks/thinkpad-edge-laptops/thinkpad-edge-e330/",
-  "/laptops-and-netbooks/ideapad-s-series-netbooks/ideapad-s210-notebook/",
   "/phones/a-series/a328-smartphone/"
 ]
 
 ```
-![product-taxonomy](../images/04/07/03-product-taxonomy.gif "product-taxonomy")
+![Product Taxonomy](../images/04/07/03-product-taxonomy.gif "Product Taxonomy")
 
