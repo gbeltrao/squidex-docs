@@ -28,10 +28,10 @@ The website itself is written in [ASP.NET Core](https://docs.microsoft.com/en-us
 
 ### How to run the Webpack Dev Server?
 
-1. `cd src/Squidex/Squidex` (Go to the web application project)
+1. `cd src/Squidex` (Go to the web application project)
 2. `npm i` (Install all dependencies for the management UI)
 3. `npm rebuild node-sass --force`
-4. `npm run dev` (Runs the webpack vdev server)
+4. `npm start` (Runs the webpack vdev server)
 
 Optionally:
 
@@ -40,7 +40,7 @@ Optionally:
 
 ### How to run the Website?
 
-1. `cd src/Squidex/Squidex` (Go to the web application project)
+1. `cd src/Squidex` (Go to the web application project)
 2. `dotnet restore` (Install all dependencies)
 3. `dotnet run` (Run the API)
 
