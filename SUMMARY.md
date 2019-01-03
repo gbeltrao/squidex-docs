@@ -16,13 +16,18 @@
 * [Extensions](02-architecture/02-extensions.md)
 * [Schemas](02-architecture/03-schemas.md)
 
+## Concepts
+
+* [Schemas](04-concepts/schemas.md)
+* [Localization](04-concepts/localization.md)
+* [Permissions](04-concepts/permissions.md)
+
 ## Next
 
 * [Roadmap](03-next/01-roadmap.md)
 
 ## Guides
 
-* [Localization](04-guides/01-localization.md)
 * [API](04-guides/02-api.md)
 * [Postman](04-guides/04-postman.md)
 * [Troubleshooting](04-guides/03-troubleshooting.md)

@@ -1,6 +1,6 @@
 # Localization
 
-In this guide we will introduce you to our localization system.
+Localization allows you to define content in multiple languages.
 
 ## Basic concept
 
