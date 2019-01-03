@@ -1,4 +1,6 @@
-# How to write your own editor
+# Custom editors
+
+## How to write your own editor
 
 Custom editors are enabling developers to replace the default editors with HTML5 applications so the editing experience of the Squidex Web App can be customized.
 
@@ -68,3 +70,42 @@ Lets see how the code looks like:
 ```
 
 You just have to reference the editor SDK and handle the events. You also have to push the current value to the web application whenever it changes. Validation will happen automatically then.
+
+## All Examples
+
+Also, we have more example you can use them on your apps.
+
+### 1. Simple CKE Editor
+
+Reference: https://squidex.github.io/squidex-samples/editors/cke-simple.html
+
+![CKE Editor](../images/04/07/02-cke.png "CKE Editor")
+
+Clone the sample and configure the CKE editor as you need it.
+
+### 2. Country selector
+
+Reference: https://squidex.github.io/squidex-samples/editors/country-selector.html
+
+![Country Selector](../images/04/07/03-country-selector.gif "Country Selector")
+
+### 3. Product taxonomy
+
+Reference: https://squidex.github.io/squidex-samples/editors/tags-category.html
+
+The data format is a list of url like paths for each product category that will be converted to a tree strucuture.
+
+``` json
+[
+  "/laptops-and-netbooks/thinkpad-x-series-chromebook-laptops/",
+  "/laptops-and-netbooks/thinkpad-edge-laptops/thinkpad-edge-e330/",
+  "/laptops-and-netbooks/ideapad-s-series-netbooks/ideapad-s210-notebook/",
+  "/tablets/a-series/a2109-tablet/",
+  "/servers/thinkserver/rs110/6438/",
+  "/desktops-and-all-in-ones/thinkcentre-m-series-desktops/m715q/10m2/",
+  "/phones/a-series/a328-smartphone/"
+]
+
+```
+![Product Taxonomy](../images/04/07/04-product-taxonomy.gif "Product Taxonomy")
+

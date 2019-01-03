@@ -42,7 +42,6 @@ If you don't want to use docker, you can also build it manually. You have to exe
 
     npm install
     npm rebuild node-sass --force
-    npm run build:copy
     npm run build
 
     dotnet restore
