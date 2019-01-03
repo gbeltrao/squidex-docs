@@ -34,7 +34,7 @@
 * [Custom Workflows](04-guides/10-workflow.md)
 * [Preview Content](04-guides/09-preview.md)
 
-## Integrated
+## Integrated Documentation
 
 * [Backups](05-integrated/backups.md)
 * [Clients](05-integrated/clients.md)
