@@ -2,26 +2,30 @@
 
 This document describes how to write extensions for Squidex. We use interfaces for all components that could be replaced and register them in the service locator.
 
-We use the dependency injection (see https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection) combined with Autofac.
+We use the standard dependency injection (see https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection).
 
-Our recommendation is to create a custom Autofac Module for your extensions:
+Our recommendation is to create a custom extension method for your services.
 
 ```csharp
-public class MyModule : Module
+public static class MyServices
 {
-    private IConfiguration Configuration { get; }
-
-    public StoreModule(IConfiguration configuration)
+    public static void AddCustomizedServices(this IServiceCollection services)
     {
-        Configuration = configuration;
-    }
-
-    protected override void Load(ContainerBuilder builder)
-    {
-        builder.RegisterType<SqlEventStore>()
+        services.AddSingletonAs<SqlEventStore>()
             .As<IEventStore>()
-            .As<IExternalSystem>()
-            .SingleInstance();
+            .As<IExternalSystem>();
+    }
+}
+
+// Add your services to AppServices.cs
+
+public static class AppServices
+{
+    public static void AddAppServices(this IServiceCollection services, IConfiguration config)
+    {
+        services.AddHttpClient();
+        // ....
+        services.AddCustomizedServices();
     }
 }
 ```

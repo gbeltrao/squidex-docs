@@ -16,6 +16,8 @@ Each field has multiple states:
 
 Field types define how a field is structured in the API and in the processing pipeline. You can define the editor for each field, so a string field can either be a html text, markdown or a list of allowed values with a dropdown editor. We use a product catalog as an example to describe the different field types.
 
+ If a field is not required it can also be null or omitted.
+
 ### String
 
 ![String](../images/fields/string.png)
@@ -63,7 +65,7 @@ Booleans have only 2 states: True or false, yes or no, 1 or 0.
 ```json
 {
     "isSoldOut": true,
-    "isOffer": false
+    "isOffer": null
 }
 ```
 
