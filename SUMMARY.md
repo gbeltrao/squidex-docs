@@ -10,12 +10,6 @@
 * [Building](01-getting-started/02-building.md)
 * [Installation](01-getting-started/03-installation.md)
 
-## Architecture
-
-* [Overview](02-architecture/01-overview.md)
-* [Extensions](02-architecture/02-extensions.md)
-* [Schemas](02-architecture/03-schemas.md)
-
 ## Concepts
 
 * [Schemas](04-concepts/schemas.md)
@@ -38,6 +32,12 @@
 * [Custom Rule Actions](04-guides/08-custom-rule-actions.md)
 * [Custom Workflows](04-guides/10-workflow.md)
 * [Preview Content](04-guides/09-preview.md)
+
+
+## Architecture
+
+* [Overview](02-architecture/01-overview.md)
+* [Extensions](02-architecture/02-extensions.md)
 
 ## Integrated Documentation
 

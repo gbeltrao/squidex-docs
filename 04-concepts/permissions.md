@@ -1,5 +1,7 @@
 # Permissions
 
+The purpose of a permission is to control the ability of the users to view, change and delete contents, assets and settings.
+
 ## Concept
 
 Squidex uses a fine granular permission system. Permissions are defined with a dot-notation:

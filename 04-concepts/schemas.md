@@ -1,6 +1,6 @@
 # Schemas
 
-A schema defines the structure of the content.
+Schemas define the structure of your content.
 
 You have to publish your schema before you can create content.
 
