@@ -46,20 +46,6 @@ Recommended implementations:
 
 * Amazon S3
 
-### IPubSub
-
-The `Squidex.Infrastructure.IPubSub` interface is used to define a very simple mechanism for distributing events between nodes in a multi-node deployment. For example there is the event store notifies the event handler that there is an update. There is a also a local cache on each node and we use the PubSub mechanism to keep them in sync. Currently there are the following implementations:
-
-* `Squidex.Infrastructure.RedisPubSub`: Publishs messages with Redis. 
-    * Read more: https://redis.io/
-* `Squidex.Infrastructure.InMemoryPubSub`: Publishs messages with an in-memory-queue. Can only be used for single-node deployments.
-
-Recommended implementations:
-
-* Amazon SNS
-* Azure Queue
-* Azure Servicebus
-
 ### IEventStore
 
 The `Squidex.Infrastructure.CQRS.Events.IEventStore` is our abstraction for different event store implementations. You can append to events, query them or subscribe to events. Dependending on your implementation you might want to use the pub-sub system for subscriptions. The notification mechanism is provided by the `Squidex.Infrastructure.CQRS.Events.IEventNotifier` interface. Currently there are the following implementations:
@@ -83,14 +69,11 @@ The `Squidex.Infrastructure.Assets.IAssetThumbnailGenerator` interface encapsula
 
 You can provide other implementations for repositories, e.g. for Elastic Search or SQL:
 
-* `Squidex.Domain.Apps.Read.Apps.Repositories.IAppRepository`: Stores all app information, including settings like languages, contributors and clients.
-* `Squidex.Domain.Apps.Read.Assets.Repositories.IAssetRepository`: Stores all information about assets, but not the content itself.
-* `Squidex.Domain.Apps.Read.Assets.Repositories.IAssetStatsRepository`: Stores usage statistics about assets.
+* `Squidex.Domain.Apps.Entities.Assets.Repositories.IAssetRepository`: Stores metadata about assets such as names and sizes, but not the content itself. Can be challenging to implement the filtering.
 * `Squidex.Domain.Apps.Read.Contents.Repositories.IContentRepository`: Stores the content itself. Can be challenging to implement the filtering.
 * `Squidex.Domain.Apps.Read.History.Repositories.IHistoryEventRepository`: Stores basic history events to show them in the UI.
-* `Squidex.Domain.Apps.Read.Schemas.Repositories.ISchemaRepository`: Stores the schema, including fields and all settings.
-* `Squidex.Domain.Apps.Read.Schemas.Repositories.ISchemaWebhookRepository`: Stores the webhook configurations.
-* `Squidex.Domain.Apps.Read.Schemas.Repositories.IWebhookEventRepository`: Stores the webhook events, like an internal job queue.
+* `Squidex.Domain.Apps.Read.Schemas.Repositories.ISchemaRepository`: Stores the schema, including fields and all settings..
+* `Squidex.Domain.Apps.Entities.Rules.Repositories.IRuleEventRepository`: Stores the rule events, like an internal job queue.
 
 ## Command Handlers
 
