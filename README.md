@@ -4,7 +4,7 @@
 
 > A content management hub for all your data.
 
-Squidex is a content management platform to manage all your content, for example:
+Squidex is a content management hub to manage all your content, for example:
 
 * Dynamic elements for your mobile apps.
 * Blog posts and articles for your website.
@@ -13,7 +13,7 @@ Squidex is a content management platform to manage all your content, for example
 
 ## How does it work?
 
-The core of Squidex is a web service. It provides APIs to manage the structure of your content, languages, settings and of course the content itself. You can consume the content from your backend, mobile apps, website and other other client applications. Of course we also provide a rich user interface for content management.
+The core of Squidex is a web service. It provides APIs to manage the structure of your content, languages, settings and of course the content itself. You can consume the content from your backend, mobile apps, website and other other client applications. Of course we also provide a rich user interface for end users (Management UI).
 
 ## Event Sourcing
 

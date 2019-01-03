@@ -30,7 +30,7 @@ Although this approach adds a lot of complexity to the system it also has a lot 
 Squidex is based on the following frameworks and tools:
 
 * ASP.NET Core for the backend.
-* Angular for the management UI
+* Angular for the Management UI
 * MongoDB for the event Store and persistency
 * Orleans as a backend technology.
 

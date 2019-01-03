@@ -69,7 +69,7 @@ Squidex defines four default roles that cannot be deleted. `{app}` is your app n
 
 ### Developer
 
-* `squidex.apps.{app}.api`: Can use the api section the management UI
+* `squidex.apps.{app}.api`: Can use the api section the Management UI
 * `squidex.apps.{app}.assets`: Can view and manage assets
 * `squidex.apps.{app}.contents`: Can view and manage contents.
 * `squidex.apps.{app}.patterns`: Can view and manage patterns.
@@ -87,7 +87,7 @@ Squidex defines four default roles that cannot be deleted. `{app}` is your app n
 
 ### Custom roles
 
-You can define custom roles in the management UI by choosing a name first and then assigning the permissions to this role. All permissions will be prefixed with `squidex.apps.{app}` automatically, otherwise you would be able to create roles that give you permissions to another app.
+You can define custom roles in the Management UI by choosing a name first and then assigning the permissions to this role. All permissions will be prefixed with `squidex.apps.{app}` automatically, otherwise you would be able to create roles that give you permissions to another app.
 
 ![Custom roles](../images/concepts/permissions/01-roles.png "Create a custom role")
 
