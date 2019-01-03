@@ -8,12 +8,12 @@ A client is another application that consumes or creates the content. The Manage
 Everything you want to store in Squidex. Blog posts, articles, products, users, payment options, settings, feature toggles...
 
 ## Event
-An event is something that happened in the past.
+An event is something that happened in the past and contains only the bare minimum of information to describe it. 
 
 ## Event Sourcing
 Event sourcing is an approach to thinking about persistent data where the primary record is a log of all events that make updates. A traditional representation of database state can be entirely recreated by reprocessing this event log. Event sourcing's benefits include strong auditing, creation of historic state, and replaying of events for debugging and analysis. Event sourcing has been around for a while, but we think it is used much less than it should be.
 
-# Partitioning
+## Partitioning
 Defines the structure of each field.
 
 ## Schema

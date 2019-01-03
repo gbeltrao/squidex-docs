@@ -15,6 +15,7 @@
 * [Schemas](04-concepts/schemas.md)
 * [Localization](04-concepts/localization.md)
 * [Permissions](04-concepts/permissions.md)
+* [Rules](04-concepts/rules.md)
 
 ## Next
 
