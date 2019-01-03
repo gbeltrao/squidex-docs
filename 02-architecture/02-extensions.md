@@ -70,10 +70,11 @@ The `Squidex.Infrastructure.Assets.IAssetThumbnailGenerator` interface encapsula
 You can provide other implementations for repositories, e.g. for Elastic Search or SQL:
 
 * `Squidex.Domain.Apps.Entities.Assets.Repositories.IAssetRepository`: Stores metadata about assets such as names and sizes, but not the content itself. Can be challenging to implement the filtering.
-* `Squidex.Domain.Apps.Read.Contents.Repositories.IContentRepository`: Stores the content itself. Can be challenging to implement the filtering.
+* `Squidex.Domain.Apps.Entities.Contents.Repositoriess.IContentRepository`: Stores the content itself. Can be challenging to implement the filtering.
 * `Squidex.Domain.Apps.Read.History.Repositories.IHistoryEventRepository`: Stores basic history events to show them in the UI.
-* `Squidex.Domain.Apps.Read.Schemas.Repositories.ISchemaRepository`: Stores the schema, including fields and all settings..
 * `Squidex.Domain.Apps.Entities.Rules.Repositories.IRuleEventRepository`: Stores the rule events, like an internal job queue.
+* `Squidex.Infrastructure.States.IStore`: Key value store for json objects. Contains everything else like comments, apps, schemas, rules, custom indices and settings.
+* `Squidex.Infrastructure.UsageTracking.IUsageTracking`: Stores historic usage information and performance metrics.
 
 ## Command Handlers
 
