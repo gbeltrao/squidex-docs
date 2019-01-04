@@ -9,3 +9,5 @@ Each field can have the following states:
 3. **Disabled**: The field cannot be manipulated in the Management UI. Do not use it together with the required operator.
 
 You have to publish your schema before you can create content.
+
+Read more about schemas in the [Documentation](../04-concepts/schemas).
