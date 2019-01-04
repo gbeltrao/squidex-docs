@@ -1,6 +1,6 @@
 A schema defines the structure of the content.
 
-Each field has multiple states:
+Each field can have the following states:
 
 1. **Locked**: The field cannot be updated or deleted.
 
