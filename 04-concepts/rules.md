@@ -4,7 +4,7 @@ A rule is a system to react to events.
 
 ## Concept
 
-Whenevery you make a change in Squidex, such as creating content or updating settings, an event is created. An event describes what happened in the past and has a unique name, for example `ContentChanged`.
+Whenevery you make a change in Squidex, such as creating content or updating settings, an event is created. An event describes what happened in the past and has a unique name, for example `ContentChanged`. You can react to events by defining rules.
 
 A rule has two parts:
 
@@ -13,20 +13,20 @@ A rule has two parts:
 
 For example
 
-![Rule](../images/concepts/rules/01-rule.png)
+![A rule that creates a twitter update when content has changed](../images/concepts/rules/01-rule.png)
 
 ## Workflow
 
 To execute a rule the following steps are excuted:
 
 1. **Enrichment**: The event is enriched with additional information.
-2. **Matching**: The matching rules are determined by comparing the trigger with the enriched event.
-3. **Formatting**: An rule job is created and stored. A contains all information to execute the rule for the current event.
-4. **Execution**: The rule job is queried from the storage and executed. If not succeeded it will be marked for a retry at a later point of time.
+2. **Matching**: The matching rules are determined by comparing the rule triggers with the enriched event.
+3. **Formatting**: An rule job is created and stored. It contains all information to execute the rule for the current event.
+4. **Execution**: The rule job is queried from the store and executed. If not succeeded it will be marked for a retry at a later point of time.
 
 ### 1. Enrichment
 
-Events contain only the bare minimum as information. For the `ContentPublished` we only need the id of the app and schema and the id of the content. In addition to that we also store metadata, such as the timestamp and the id of the user who created the content. This is common for all events. But for the matching process we need additional information, for example the content itself, so that we can check based on the data of the content item, whether we want to execute the rule.
+Events contain only the bare minimum of information. For the `ContentPublished` event we only need the if of the content that has been published. All other information can be derived. In addition to that we also store metadata, such as the timestamp and the id of the user who created the content. This is common for all events. But for the next steps we need additional information. Therefore we retrieve them from the system and create enriched events.
 
 The enriched events have the following structure:
 
@@ -92,15 +92,19 @@ The enriched events have the following structure:
 }
 ```
 
-It is important to understand the structure because you can reference fields when you define when a rule should be executed. Some actions juse the some structure to pass over the event to other systems: For example, the webhook action adds the event to the request body in (almost) the same format.
+It is important to understand the structure because we use it in the matching step. Furthermore some actions just pass over the enriched events to other systems: For example, the webhook action adds the event to the request body in (almost) the same format.
 
 ### 2. Matching
+
+Lets just have a look to a trigger definition first:
+
+![Triggers when a blog post is published or restored](../images/concepts/rules/02-content-trigger.png)
 
 In the matching process we check whether the action should be executed. There are several conditions:
 
 1. The event type must be correct:
-    * A rule with a `AssetChangedTrigger` can only handle asset events.
-    * A rule with a `ContentChangedTrigger` can only handle content events.
+    * A rule with a `AssetChanged` trigger can only handle asset events.
+    * A rule with a `ContentChanged` trigger can only handle content events.
 2. If a condition is defined it must evaluate to true.
 
 A condition is a javascript expression that must return `true` to execute the rule.
@@ -123,9 +127,9 @@ Of course it can be more complex if necessary.
 
 ### 3. Formatting
 
-When you select an action you have to define several settings. In our example above we create a twitter update and have to define the text we want to publish. 
+When you configure an action you have to define several settings. In our example above we create a twitter update and have to define the text we want to publish. 
 
-Almost all text settings for actions support placeholder that allow you to use content from the event.
+Almost all text settings for actions support placeholders that allow you to integrate information from the enriched event.
 
 * `$APP_ID`: The id of your app (guid).
 * `$APP_NAME`: The name of your app.
@@ -165,7 +169,7 @@ Script(`${contentAction()}`)
 Script(`${event.data.city.de}`)
 ```
 
-You can also reference any other field from the event and you can if-statements
+You can also reference any other field from the event and you can use if-statements and other javascript language features.
 
 ```js
 if (event.fileSize > 100000) {
