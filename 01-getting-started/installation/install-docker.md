@@ -11,7 +11,7 @@
 
 We provide a docker-compose configuration:
 
-*  https://github.com/Squidex/squidex-docker/blob/master/standalone
+> https://github.com/Squidex/squidex-docker/blob/master/standalone
 
 It will run 4 containers:
 
