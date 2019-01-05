@@ -6,9 +6,15 @@
 
 ## Getting Started
 
-* [Developing](01-getting-started/01-developing.md)
-* [Building](01-getting-started/02-building.md)
 * [Installation](01-getting-started/03-installation.md)
+* [Installation under Windows with IIS](01-getting-started/installation/install-windows-iis.md)
+* [Install with Docker](01-getting-started/installation/install-docker.md)
+* [Configuration](01-getting-started/installation/configuration.md)
+
+## Development
+
+* [Building](01-getting-started/02-building.md)
+* [Developing](01-getting-started/01-developing.md)
 
 ## Concepts
 
