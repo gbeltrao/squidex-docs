@@ -46,7 +46,7 @@
 * [Overview](02-architecture/01-overview.md)
 * [Extensions](02-architecture/02-extensions.md)
 
-## Integrated Documentation
+## Integrated
 
 * [Backups](05-integrated/backups.md)
 * [Clients](05-integrated/clients.md)
