@@ -7,7 +7,7 @@
 ## Getting Started
 
 * [Installation](01-getting-started/03-installation.md)
-* [Installation under Windows with IIS](01-getting-started/installation/install-windows-iis.md)
+* [Install with IIS](01-getting-started/installation/install-windows-iis.md)
 * [Install with Docker](01-getting-started/installation/install-docker.md)
 * [Configuration](01-getting-started/installation/configuration.md)
 
