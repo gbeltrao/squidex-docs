@@ -52,8 +52,8 @@
 * [Clients](05-integrated/clients.md)
 * [Contributors](05-integrated/contributors.md)
 * [Languages](05-integrated/languages.md)
-* [Patterns](05-integrated/patterns.md)
-* [Roles](05-integrated/roles.md)
+* [Patterns](05-integrated/integrated-patterns.md)
+* [Roles](05-integrated/integrated-roles.md)
 * [Rules](05-integrated/rules.md)
 * [Schemas](05-integrated/schemas.md)
 
