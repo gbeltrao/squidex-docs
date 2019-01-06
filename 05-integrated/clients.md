@@ -7,4 +7,4 @@ You can use the the following roles:
 * **Developer**: Can also create, modify and delete schemas and rules.
 * **Owner**: Can also manage settings and manage contributors and subscriptions.
 
-Be careful with Owners and only use them if absolutely necessary, because Owner have access to all data and settings.
+Be careful with the **Owner** role and only use it if absolutely necessary, because this role has access to all data and settings.
