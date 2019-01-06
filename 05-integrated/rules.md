@@ -10,6 +10,7 @@ Almost all text settings for actions support placeholder. At the moment the foll
 
 * `$APP_ID`: The id of your app (guid).
 * `$APP_NAME`: The name of your app.
+* `$USER_ID`: The id of the user (or client name).
 * `$USER_NAME`: The display name of the user (or client name).
 * `$USER_EMAIL`: The email address of the user (or client name).
 * `$TIMESTAMP_DATE`: The date when the event has happened (usually different from the time when the rule is executed) in the following format: `yyyy-MM-dd`.
@@ -22,6 +23,10 @@ For *ContentChangedTrigger*:
 * `$CONTENT_URL`: The url to the content in the administration tool.
 * `$CONTENT_ACTION`: The content event (created, updated, deleted).
 
+You can also use javascript expressions with 
+
+    `Script('<MY-SCRIPT>')`
+
 Squidex will make several attempts to execute an rule:
 
 1. After a few seconds.
@@ -30,6 +35,8 @@ Squidex will make several attempts to execute an rule:
 4. After 6 hours.
 6. After 12 hours.
 
-A rule execution will be treated as failed if it does not complete successfully within 2 seconds If your target system is slow (e.g. a webhook) you should use an queue between Squidex and your application.
+A rule execution will be treated as failed if it does not complete successfully within 2 seconds. If your target system is slow (e.g. a webhook) you should use a queue between Squidex and your application.
 
 Rule executions will be stored as events for 2 days for debugging and will be deleted automatically.
+
+Read more about rules in the [Documentation](../04-concepts/rules).
