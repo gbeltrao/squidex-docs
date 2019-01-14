@@ -33,7 +33,7 @@ The system is expressed as a hierarchy. If you visualize them as a tree you get 
 This means...
 
 * That `squidex` gives you all permissions and makes you an adminstrator.
-* That `squidex.{app}` gives you all permissions for a specific app and makes you the app owner.
+* That `squidex.apps.{app}` gives you all permissions for a specific app and makes you the app owner.
 
 ## Defining permissions
 
