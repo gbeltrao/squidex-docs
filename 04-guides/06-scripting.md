@@ -31,7 +31,7 @@ if (ctx.isClient) { // ctx Variable contains all Context information
 ```js
 var data = ctx.data;
 if (data.password.iv !== data.passwordConfirm.iv) {
-    // Tell Squidex to return 4000 (Bad Request)
+    // Tell Squidex to return a 400 (Bad Request)
     reject('Passwords must be the same');
 }
 ```
