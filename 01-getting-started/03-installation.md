@@ -8,3 +8,7 @@
 ## See how to configure Squidex
 
 * [Configuration Options](installation/configuration.md)
+
+## Optional: configure Squidex.Identity
+
+* [How to use Squidex Identity](identity/use-squidex-identity.md)
