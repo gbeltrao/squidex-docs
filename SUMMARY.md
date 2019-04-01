@@ -9,6 +9,7 @@
 * [Installation](01-getting-started/03-installation.md)
 * [Install with IIS](01-getting-started/installation/install-windows-iis.md)
 * [Install with Docker](01-getting-started/installation/install-docker.md)
+* [Install Identity](01-getting-started/identity/use-squidex-identity.md)
 * [Configuration](01-getting-started/installation/configuration.md)
 
 ## Development
