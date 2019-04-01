@@ -6,34 +6,48 @@ Squidex Identity server based on Squidex Headless CMS. It implements the OpenId 
 > https://github.com/Squidex/squidex-identity
 
 ## 1. Setup of Squidex identity
-* Clone Squidex.Identity repository
 
-    `
-git clone https://github.com/Squidex/squidex-identity.git
-`
+### 1.1. Clone Squidex.Identity
 
-* Create an identity app in your Squidex instance (local or cloud)
+Clone the Squidex identity repository with the following command:
 
-    ![Create Identity App](../../images/identity/new-identity-app.png "Squidex")
+    git clone https://github.com/Squidex/squidex-identity.git
+
+### 1.2. Create an identity app
+
+You can create the app with predefined schemas either in the cloud or in your custom installation:
+
+![Create Identity App](../../images/identity/new-identity-app.png "Squidex")
     
-* Update the configuration with the url to your squidex instance and the client id and secret of the default client.
+### 1.3. Update the identity configuration
 
-    ![Copy Default Client](../../images/identity/default-client.png "Squidex")
-    
-    `Squidex.Identity/appsettings.json`
-    ```json
-    "app": {
-        ...
-        "url": "http://localhost:5000",
-        "clientId": "yourIdentityAppName",
-        "oidcClient": "identity:default",
-        "clientSecret": "xxx",
-        ...
-        }
-    ```
+Update the configureation with the url to your squidex instance and the client id and secret of the default client.
+
+![Copy Default Client](../../images/identity/default-client.png "Squidex")
+
+Update the configuration file at: `Squidex.Identity/appsettings.json`
+
+```json
+"app": {
+    // ...
+    "url": "https://cloud.squidex.io",
+    "clientId": "identity:default",
+    "clientSecret": "xxx",
+    // ...
+}
+```
+
+Of course you can also use environment variables, e.g.
+
+* `APP__URL=https://cloud.squidex.io`
+* `APP__CLIENTID=identity:default`
+* `APP__CLIENTSECRET=xxx`
 
 ## 2. General application settings:
-If you create a identity app in Squidex you will see a schema with the settings, where you can upload a logo, footer text, privacy settings and so on. Most settings are optional but you must setup credentials to an smpt server. 
+
+If you create a identity app in Squidex you will see a schema with the settings, where you can upload a logo, footer text, privacy settings and so on. 
+
+Most settings are optional but you must setup credentials to an smpt server. 
 
 ![Site Setting](../../images/identity/content-setting.png "Squidex")
     
@@ -47,31 +61,40 @@ If you want to use external authentication providers you can setup them in the a
 You have to create an OAuth 2.0-Client-IDs in the google developer console. You have to define the redirect_uri in this process and you must use 
 `http://localhost:3500/signin-google`
 
+the redirect urls for other authentication providers are:
+
+ * `http://localhost:3500/signin-twitter`
+ * `http://localhost:3500/signin-facebook`
+ * `http://localhost:3500/signin-github`
+
 ![Authentication Schemes](../../images/identity/authentication-schemes.png "Squidex")
 
 ## 4. External clients
 When you want to connect an external application to Squidex identity you have to configure a client. This is a little bit complicated, but you can find all settings here: http://docs.identityserver.io/en/latest/reference/client.html
 
-* #### Self Hosted
-    Create new content in Client
-    ![Self-Hosted](../../images/identity/self-hosted-1.png "Squidex")
+### Squidex as an external client
     
-    ![Self-Hosted](../../images/identity/self-hosted-2.png "Squidex")
+You can also setup Squidex as an external client, so that the same users can also login to manage content.
 
-    Update the Squidex configuration
-    
-    `Squidex/appsettings.json`
-    ```json
-    "identity": {
-      ...
-      "oidcName": "selfHostedName",
-      "oidcAuthority": "http://localhost:3500/",
-      "oidcClient": "client:selfHosted",
-      "oidcSecret": "xxx",
-      ...
-    }  
-    ```  
+In the first step you have to create a new client:
 
-    Then you can register with self-host.
-    
-    ![Self-Hosted](../../images/identity/self-hosted-register.png "Squidex")
+![Self-Hosted](../../images/identity/self-hosted-1.png "Squidex")
+
+![Self-Hosted](../../images/identity/self-hosted-2.png "Squidex")
+
+In the second step you have to update the Squidex configuration at `Squidex/appsettings.json`
+
+```json
+"identity": {
+    ...
+    "oidcName": "selfHostedName",
+    "oidcAuthority": "http://localhost:3500/",
+    "oidcClient": "client:selfHosted",
+    "oidcSecret": "xxx",
+    ...
+}  
+```  
+
+Then you can register at Squidex identity.
+
+![Self-Hosted](../../images/identity/self-hosted-register.png "Squidex")
