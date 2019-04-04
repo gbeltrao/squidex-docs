@@ -30,11 +30,11 @@ The website itself is written in [ASP.NET Core](https://docs.microsoft.com/en-us
 
 1. `cd src/Squidex` (Go to the web application project)
 2. `npm i` (Install all dependencies for the Management UI)
-3. `npm rebuild node-sass --force`
-4. `npm start` (Runs the webpack vdev server)
+3. `npm start` (Runs the webpack vdev server)
 
 Optionally:
 
+4. `npm rebuild node-sass --force` (Only if you have issues with node-sass)
 5. `npm test` (Runs the unit tests and listens for changes)
 6. `npm run test:coverage` (Runs the unit tests and calculates the test coverage).
 
