@@ -1,6 +1,6 @@
 ![Squidex Logo](images/logo-wide.png)
 
-# What is Squidex?
+# What is Squidex??
 
 > A content management hub for all your data.
 
