@@ -6,30 +6,30 @@ This is a short tutorial how to make the first requests with postman.
 
 The first step is to create an application. Choose a name of your choice.
 
-![Create App](../images/04/04/01-create-app.png "Create App")
+![Create App](../images/articles/postman/create-app.png)
 
 
 ## 2. Create a Schema
 
 Next create a schema. In this example we added a single field. 
 
-![Create Schema](../images/04/04/02-create-schema.png "Create Schema")
+![Create Schema](../images/articles/postman/create-schema.png)
 
 Ensure that the schema is published. Otherwise you cannot create content for the schema.
 
-![Create Fields](../images/04/04/03-create-fields.png "Create Fields")
+![Create Fields](../images/articles/postman/create-fields.png)
 
 ## 3. Add Content
 
 Add some content to your schema.
 
-![Create Contents](../images/04/04/04-create-content.png "Create Contents")
+![Create Contents](../images/articles/postman/create-content.png)
 
 ## 4. Create a Client
 
 Create a client for each application. Choose a name.
 
-![Create Client](../images/04/04/05-create-client.png "Create Client")
+![Create Client](../images/articles/postman/create-client.png)
 
 We have implemented the OpenID client credentials flow: https://docs.axway.com/u/documentation/api_gateway/7.5.3/webhelp_portal_oauth/Content/OAuthGuideTopics/oauth_flows_client_credentials.htm to make requests.
 
@@ -45,13 +45,13 @@ You have to make a request to get an authentication token. This token is valid f
 
 For now we just use the 'Create Token' button to get the access token.
 
-![Get Token](../images/04/04/06-get-token.png "Get Token")
+![Get Token](../images/articles/postman/get-token.png)
 
 ## 5. Download Swagger Specification
 
 Open the API documentation under *API\Swagger* and download the swagger specification:
 
-![Download Swagger](../images/04/04/07-download-swagger.png "Download Swagger")
+![Download Swagger](../images/articles/postman/download-swagger.png)
 
 ## 6. Make the request with Postman
 
@@ -62,4 +62,4 @@ Open the API documentation under *API\Swagger* and download the swagger specific
 5. Add an authorization header and copy the access token from Step4.
 
 
-![Make Request](../images/04/04/08-make-request.png "Make Request")
+![Make Request](../images/articles/postman/make-request.png)

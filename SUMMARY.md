@@ -9,6 +9,7 @@
 * [Installation](01-getting-started/03-installation.md)
 * [Install with IIS](01-getting-started/installation/install-windows-iis.md)
 * [Install with Docker](01-getting-started/installation/install-docker.md)
+* [Install on Azure](01-getting-started/installation/install-azure.md)
 * [Install Identity](01-getting-started/identity/use-squidex-identity.md)
 * [Configuration](01-getting-started/installation/configuration.md)
 
@@ -36,7 +37,6 @@
 * [Assets](04-guides/05-assets.md)
 * [Scripting](04-guides/06-scripting.md)
 * [Webhooks](04-guides/11-webhooks.md)
-* [Custom Editors](04-guides/07-custom-editors.md)
 * [Custom Rule Actions](04-guides/08-custom-rule-actions.md)
 * [Custom Workflows](04-guides/10-workflow.md)
 * [Preview Content](04-guides/09-preview.md)

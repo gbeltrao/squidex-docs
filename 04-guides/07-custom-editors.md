@@ -6,7 +6,7 @@ Custom editors are enabling developers to replace the default editors with HTML5
 
 Technically speaking a UI editor lives in a sandboxed iframe,which interacts with the web application through a small SDK using messaging. This SDK is a proxy of the Angular [ControlValueAccessor](https://angular.io/api/forms/ControlValueAccessor), without having the dependencies to Angular itself.
 
-![Define Editor URL](../images/04/07/01-custom-editors.png "Define Editor URL")
+![Define Editor URL](../images/articles/custom-editors/custom-editors.png)
 
 Lets see how the code looks like:
 
@@ -79,7 +79,7 @@ Also, we have more example you can use them on your apps.
 
 Reference: https://squidex.github.io/squidex-samples/editors/cke-simple.html
 
-![CKE Editor](../images/04/07/02-cke.png "CKE Editor")
+![CKE Editor](../images/articles/custom-editors/cke.png)
 
 Clone the sample and configure the CKE editor as you need it.
 
@@ -87,7 +87,7 @@ Clone the sample and configure the CKE editor as you need it.
 
 Reference: https://squidex.github.io/squidex-samples/editors/country-selector.html
 
-![Country Selector](../images/04/07/03-country-selector.gif "Country Selector")
+![Country Selector](../images/articles/custom-editors/country-selector.gif)
 
 ### 3. Product taxonomy
 
@@ -107,5 +107,4 @@ The data format is a list of url like paths for each product category that will 
 ]
 
 ```
-![Product Taxonomy](../images/04/07/04-product-taxonomy.gif "Product Taxonomy")
 

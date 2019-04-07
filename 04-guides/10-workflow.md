@@ -20,7 +20,7 @@ Therefore we have 3 states for content:
 
 The following diagram vizualizes our workflow.
 
-![Workflow](../images/04/10/01-workflow.png "Workflow")
+![Workflow](../images/articles/workflow/workflow.png)
 
 ## Step 1: Create the schema
 
@@ -34,11 +34,11 @@ We will make set the first two fields as list fields, which means we will see th
 
 The schema in the UI:
 
-![schema](../images/04/10/02-schema.png "Schema in UI")
+![schema](../images/articles/workflow/schema.png
 
 In the content list the schema will look like this:
 
-![Articles](../images/04/10/03-content-list.png "List of article with Title and Status")
+![Articles](../images/articles/workflow/content-list.png)
 
 Now we can very easily see all articles and their status. But as a reviewer I am probably only interested in the articles that is ready to be reviewed.
 
@@ -46,19 +46,19 @@ We can search for these articles with the following query: `$filter=data/status/
 
 It looks a little bit like technical stuff and our reviewers should not care about this. But we can save the query and give it a friendly name so it can be reused.
 
-![Save Query](../images/04/10/04-save-query.png "Save the query for content authors")
+![Save Query](../images/articles/workflow/save-query.png)
 
 The basic setup is already done and it might work well enough in a small team. It requires a little bit of discipline and corporation of all team members. But if we have critical content like product texts or a big team where we don't want to rely that everybody has a good day we need some rules to enforce that our workflow is used correctly.
 
 You can also use the new comments feature to share information between reviewer and writer:
 
-![Comments](../images/04/10/04a-comments.png "Comments to share information")
+![Comments](../images/articles/workflow/comments.png)
 
 ## Step 2: Enforce the workflow
 
 We start by creating our Roles in Squidex:
 
-![Roles](../images/04/10/05-roles.png "Roles")
+![Roles](../images/articles/workflow/roles.png)
 
 As you can see in the screenshot above, the `Creator` can only create and update content, but not publish it and the `Reviewer` can only update content. we use the default role `Editor` for the `Publisher`.
 
@@ -77,7 +77,7 @@ I will not show everything in this tutorial, it is just too much and the solutio
 
 The solution is scripting. If you click the three dots in the schema editor a menu will pop up with a menu item to the scripting editor. Here you can define scripts that are invoked when a content item is queried, created, updated, deleted or when the status is changed.
 
-![Scripting](../images/04/10/06-scripting.png "The integrated scripting editor")
+![Scripting](../images/articles/workflow/scripting.png)
 
 ### The create script:
 
@@ -95,7 +95,7 @@ Thats it, we do not have to do more, because the permission system already enfor
 
 The UI will show the error message from the script:
 
-![Error Message](../images/04/10/07-error.png "Error Message from the script")
+![Error Message](../images/articles/workflow/error.png)
 
 
 ### The update script:

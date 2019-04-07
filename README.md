@@ -1,4 +1,4 @@
-![Squidex Logo](images/logo-wide.png "Squidex")
+![Squidex Logo](images/logo-wide.png)
 
 # What is Squidex?
 

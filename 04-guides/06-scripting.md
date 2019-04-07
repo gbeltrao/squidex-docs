@@ -4,11 +4,11 @@ Security and validation are difficult to solve, because there are a lot of diffe
 
 Scripts can be defined in the schema editor. The link can be found in the extended menu:
 
-![Path to Editor](../images/04/06/01-path-to-dialog.png "Path to Editor")
+![Path to Editor](../images/articles/scripting/dialog-to.png)
 
 In the editor you can define all scripts
 
-![Editor](../images/04/06/02-dialog.png "Editor")
+![Editor](../images/articles/scripting/dialog.png)
 
 Lets have a look to some use cases:
 

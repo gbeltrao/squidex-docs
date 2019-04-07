@@ -89,13 +89,13 @@ Squidex defines four default roles that cannot be deleted. `{app}` is your app n
 
 You can define custom roles in the Management UI by choosing a name first and then assigning the permissions to this role. All permissions will be prefixed with `squidex.apps.{app}` automatically, otherwise you would be able to create roles that give you permissions to another app.
 
-![Custom roles](../images/concepts/permissions/01-roles.png "Create a custom role")
+![Custom roles](../images/articles/permissions/roles.png)
 
 ## Administration
 
 As an administrator you can also assign permissions to users individually: 
 
-![Custom permissions](../images/concepts/permissions/02-administration.png "Assign permissions individually")
+![Custom permissions](../images/articles/permissions/administration.png)
 
 There are some restrictions to the system:
 

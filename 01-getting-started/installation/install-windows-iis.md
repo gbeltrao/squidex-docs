@@ -47,7 +47,7 @@ Create a folder for your squidex installation and extract the archive to this fo
 
 2. Provide a **SiteName** and set the **Physical path** to the squidex folder. In this case we host Squidex at http://localhost:80
 
-![IIS Site configuration](../../images/started/01-iis-site.PNG)
+![IIS Site configuration](../../images/started/iis/site.png)
 
 3. Under the server's node, select **Application Pools**.
 
@@ -55,7 +55,7 @@ Create a folder for your squidex installation and extract the archive to this fo
 
 5. In the **Edit Application Pool** window, set the **.NET CLR version** to **No Managed Code**:
 
-![IIS Application pool](../../images/started/02-iis-pool.PNG)
+![IIS Application pool](../../images/started/iis/pool.png)
 
 ### 2.3. Configure Squidex
 

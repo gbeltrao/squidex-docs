@@ -56,7 +56,7 @@ A number can either be a point number or integer. Typical examples when to use n
 
 ### Boolean
 
-![Boolean](../images/fields/boolean.png)
+![Boolean](../images/fields/boolean)
 
 Booleans have only 2 states: True or false, yes or no, 1 or 0.
 
