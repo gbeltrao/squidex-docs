@@ -10,7 +10,7 @@ Before you start you have to setup a few things first:
 
 1. A resource group for all your squidex resources.
 2. A service plan to host squidex.
-3. A CosmosDB instance for your database.
+3. A CosmosDB instance for your database with all preview features enabled.
 4. A storage account for your assets.
 
 ## 1. Create the web app
