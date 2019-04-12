@@ -37,7 +37,7 @@
 * [Assets](04-guides/05-assets.md)
 * [Scripting](04-guides/06-scripting.md)
 * [Webhooks](04-guides/11-webhooks.md)
-* [Custom Rule Actions](04-guides/08-custom-rule-actions.md)
+* [Custom Editors](04-guides/07-custom-editors.md)
 * [Custom Workflows](04-guides/10-workflow.md)
 * [Preview Content](04-guides/09-preview.md)
 
