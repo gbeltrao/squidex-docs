@@ -107,4 +107,9 @@ The data format is a list of url like paths for each product category that will 
 ]
 
 ```
+### 4. JSON Tree
 
+Create a visual tree for a JSON object.
+![JSON Tree](../images/articles/custom-editors/jstree-editor.png)
+
+Reference: https://squidex.github.io/squidex-samples/editors/jstree-editor.html
