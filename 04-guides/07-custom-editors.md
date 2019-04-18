@@ -79,7 +79,7 @@ Also, we have more example you can use them on your apps.
 
 Reference: https://squidex.github.io/squidex-samples/editors/cke-simple.html
 
-![CKE Editor](../images/articles/custom-editors/cke.png)
+![CKE Editor](../images/articles/editors/cke.png)
 
 Clone the sample and configure the CKE editor as you need it.
 
@@ -87,7 +87,7 @@ Clone the sample and configure the CKE editor as you need it.
 
 Reference: https://squidex.github.io/squidex-samples/editors/country-selector.html
 
-![Country Selector](../images/articles/custom-editors/country-selector.gif)
+![Country Selector](../images/articles/editors/country-selector.gif)
 
 ### 3. Product taxonomy
 
@@ -107,10 +107,13 @@ The data format is a list of url like paths for each product category that will 
 ]
 
 ```
+
+![Product taxonomy](../images/articles/editors/product-taxonomy.gif)
+
 ### 4. JSON Tree
 
 Reference: https://squidex.github.io/squidex-samples/editors/jstree-editor.html
 
 Create a visual tree for a JSON object.
 
-![JSON Tree](../images/articles/custom-editors/jstree-editor.png)
+![JSON Tree](../images/articles/editors/jstree-editor.png)

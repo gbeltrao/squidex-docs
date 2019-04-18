@@ -31,6 +31,7 @@
 
 ## Guides
 
+* [CLI](04-guides/01-cli.md)
 * [API](04-guides/02-api.md)
 * [Postman](04-guides/04-postman.md)
 * [Troubleshooting](04-guides/03-troubleshooting.md)
