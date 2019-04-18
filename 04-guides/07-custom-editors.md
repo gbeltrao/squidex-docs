@@ -6,7 +6,7 @@ Custom editors are enabling developers to replace the default editors with HTML5
 
 Technically speaking a UI editor lives in a sandboxed iframe,which interacts with the web application through a small SDK using messaging. This SDK is a proxy of the Angular [ControlValueAccessor](https://angular.io/api/forms/ControlValueAccessor), without having the dependencies to Angular itself.
 
-![Define Editor URL](../images/articles/custom-editors/custom-editors.png)
+![Define Editor URL](../images/articles/editors/custom-editors.png)
 
 Lets see how the code looks like:
 
