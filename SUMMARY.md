@@ -31,16 +31,16 @@
 
 ## Guides
 
-* [CLI](04-guides/01-cli.md)
-* [API](04-guides/02-api.md)
-* [Postman](04-guides/04-postman.md)
-* [Troubleshooting](04-guides/03-troubleshooting.md)
-* [Assets](04-guides/05-assets.md)
-* [Scripting](04-guides/06-scripting.md)
-* [Webhooks](04-guides/11-webhooks.md)
-* [Custom Editors](04-guides/07-custom-editors.md)
-* [Custom Workflows](04-guides/10-workflow.md)
-* [Preview Content](04-guides/09-preview.md)
+* [CLI](06-guides/01-cli.md)
+* [API](06-guides/02-api.md)
+* [Postman](06-guides/04-postman.md)
+* [Troubleshooting](06-guides/03-troubleshooting.md)
+* [Assets](06-guides/05-assets.md)
+* [Scripting](06-guides/06-scripting.md)
+* [Webhooks](06-guides/11-webhooks.md)
+* [Custom Editors](06-guides/07-custom-editors.md)
+* [Custom Workflows](06-guides/10-workflow.md)
+* [Preview Content](06-guides/09-preview.md)
 
 
 ## Architecture
