@@ -37,7 +37,6 @@
 * [Troubleshooting](06-guides/03-troubleshooting.md)
 * [Assets](06-guides/05-assets.md)
 * [Scripting](06-guides/06-scripting.md)
-* [Webhooks](06-guides/11-webhooks.md)
 * [Custom Editors](06-guides/07-custom-editors.md)
 * [Custom Workflows](06-guides/10-workflow.md)
 * [Preview Content](06-guides/09-preview.md)
