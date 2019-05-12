@@ -82,16 +82,73 @@ or as table
 .\sq.exe backup create backup.zip
 ```
 
-## Use Case: Export content
-
-* Export content to CSV
+## Use Case: Export content to CSV
 
 ```
 .\sq.exe content export features --fields=id,version
 ```
 
-* Export content to JSON
+You have to define the fields you want to export. The general syntax is:
+
+    (<CSV_COLUMN>=)?<JSON_PATH>
+
+The csv column is optional and can be skipped. If no column name is specified the path string will be used.
+
+To get a good understanding of the paths, it is helpful to have a look to the API documentation of your schemas, e.g.
+
+https://cloud.squidex.io/api/content/squidex-website/docs#operation/GetTestimonialsContent
+
+Some sample paths
+
+* `id`
+* `version`
+* `data.personName.iv`
+* `data.personName` (`iv` is added by default for non-localized fields)
+* `personName=data.personName` (Column name for non-localized field).
+
+Not from the example above:
+
+* `data.text.en` (Localized field)
+* `data.hobbies.iv.0.name`(For array of objects)
+* `data.hobbies.iv`(To serialize the whole array to a string)
+* `data.json.iv.property` (For a nested object)
+* `data.json.iv` (To serialize the whole object to a string)
+
+If the extract value is a json array of object it will be serialized to a string.
+
+## Use Case: Export content to JSON
 
 ```
 .\sq.exe content export features --format=JSON
 ```
+
+## Use Case: Import content from CSV
+
+```
+.\sq.exe content import features File.csv --fields=text
+```
+
+You have to define the fields you want to import. The general syntax is:
+
+    <JSON_PATH>(=<CSV_COLUM>)?
+
+The csv column is optional and can be skipped. If no column name is specified the path string will be used.
+
+To get a good understanding of the paths, it is helpful to have a look to the API documentation of your schemas, e.g.
+
+https://cloud.squidex.io/api/content/squidex-website/docs#operation/GetTestimonialsContent
+
+Some sample paths
+
+* `personName.iv=personName` 
+* `personName` (`iv` is added by default for non-localized fields)
+
+Not from the example above:
+
+* `data.text.en=text` (Localized field)
+* `data.hobbies.iv.0.name=firstHobby`(For array of objects)
+* `data.hobbies.iv=hobbies`(To serialize the whole array to a string)
+* `data.json.iv.property=jsonProperty` (For a nested object)
+* `data.json.iv=json` (To serialize the whole object to a string)
+
+If the extract value is a json array of object it will be serialized to a string.
