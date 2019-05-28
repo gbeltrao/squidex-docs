@@ -17,13 +17,13 @@ Clone the Squidex identity repository with the following command:
 
 You can create the app with predefined schemas either in the cloud or in your custom installation:
 
-![Create Identity App](../../images/started/identity/new-identity-app)
+![Create Identity App](../../images/started/identity/new-identity-app.png)
     
 ### 1.3. Update the identity configuration
 
 Update the configureation with the url to your squidex instance and the client id and secret of the default client.
 
-![Copy Default Client](../../images/started/identity/default-client)
+![Copy Default Client](../../images/started/identity/default-client.png)
 
 Update the configuration file at: `Squidex.Identity/appsettings.json`
 
@@ -49,7 +49,7 @@ If you create a identity app in Squidex you will see a schema with the settings,
 
 Most settings are optional but you must setup credentials to an smpt server. 
 
-![Site Setting](../../images/started/identity/content-setting)
+![Site Setting](../../images/started/identity/content-setting.png)
     
 Email Delivery Service: 
 * https://www.mailjet.com/    
@@ -67,7 +67,7 @@ the redirect urls for other authentication providers are:
  * `http://localhost:3500/signin-facebook`
  * `http://localhost:3500/signin-github`
 
-![Authentication Schemes](../../images/started/identity/authentication-schemes)
+![Authentication Schemes](../../images/started/identity/authentication-schemes.png)
 
 ## 4. External clients
 When you want to connect an external application to Squidex identity you have to configure a client. This is a little bit complicated, but you can find all settings here: http://docs.identityserver.io/en/latest/reference/client.html
@@ -78,9 +78,9 @@ You can also setup Squidex as an external client, so that the same users can als
 
 In the first step you have to create a new client:
 
-![Self-Hosted](../../images/started/identity/self-hosted-1)
+![Self-Hosted](../../images/started/identity/self-hosted-1.png)
 
-![Self-Hosted](../../images/started/identity/self-hosted-2)
+![Self-Hosted](../../images/started/identity/self-hosted-2.png)
 
 In the second step you have to update the Squidex configuration at `Squidex/appsettings.json`
 
@@ -97,4 +97,4 @@ In the second step you have to update the Squidex configuration at `Squidex/apps
 
 Then you can register at Squidex identity.
 
-![Self-Hosted](../../images/started/identity/self-hosted-register)
+![Self-Hosted](../../images/started/identity/self-hosted-register.png)
