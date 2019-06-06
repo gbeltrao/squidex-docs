@@ -50,7 +50,7 @@ Go to the `Configuration section` and choose `Application settings` to configure
 
 Sensitive values are hidden, but configuration values for external authentication providers are empty to turn them off.
 
-## 5. Configure your volumnes
+## 5. Configure your volumes
 
 Go to the `Configuration section` and choose `Path mappings` to configure volumes.
 
