@@ -9,80 +9,68 @@ In this tutorial I will also not teach you the basics of Azure. it is a very com
 Before you start you have to setup a few things first:
 
 1. A resource group for all your squidex resources.
-2. A service plan to host squidex.
-3. A CosmosDB instance for your database with all preview features enabled.
-4. A storage account for your assets.
+2. A service plan to host squidex (Linux).
+3. A storage account for your assets and mongo db (general purpose v1 or v2).
 
 ## 1. Create the web app
 
-Just create a new web app and follow the settings from the screenshot:
+You can find the docker-compose configurations for Azure here:
 
-![Create App Service](../../images/started/azure/create-app-service.png)
+> https://github.com/Squidex/squidex-docker/blob/master/standalone
+
+Create a new web app with the following `Basics`:
+
+![Create App Service Basics](../../images/started/azure/create-app-service-basics.png)
+
+Configure the `Docker` tab like this:
+
+![Create App Service Docker](../../images/started/azure/create-app-service-docker.png)
 
 ## 2. Enable logging
 
 In the next step we enable logging. This makes diagnostics easier.
 
-Go to your app service and scroll down to menu item `Diagnostics log` and turn on file logging. You can then use the `log stream` to view all log entries.
+Go to your app service and scroll down to menu item `App Service logs` and turn on file logging. You can then use the `Log stream` to view all log entries.
 
 ![Enable logging](../../images/started/azure/logging.png)
 
-## 3. Configure your application
+## 3. Configure your Storage Account
+
+Go to your storage account instance, choose `Files` and create two file shares.
+
+![Store Account settings](../../images/started/azure/storage.png)
+
+## 4. Configure your application
 
 Go to the `Configuration section` and choose `Application settings` to configure squidex.
 
-> **IMPORANT**: After you change your configuration values you have to restart youir container. In our case the only option was to stop the app service and then start it again. The restart button did not work. Please write a comment if you know a better solution.
+> **IMPORANT**: After you change your configuration values you have to restart your container. In our case the only option was to stop the app service and then start it again. The restart button did not work. Please write a comment if you know a better solution.
 
 ![All configuration values](../../images/started/azure/configuration.png)
 
 Sensitive values are hidden, but configuration values for external authentication providers are empty to turn them off.
 
-### 3.1. How to configure CosmosDB
+## 5. Configure your volumnes
 
-Go to your CosmosDB instance to get the configuration settings:
+Go to the `Configuration section` and choose `Path mappings` to configure volumes.
 
-![Cosmos DB settings](../../images/started/azure/cosmos.png)
+Click `New Azure Storage Mount` and create the following mapping for your assets store.
 
-### 3.2. How to configure Asset Store
+![Assets volume](../../images/started/azure/create-asset-volume.png)
 
-Go to your storage account instance to get the configuration settings:
+Click `New Azure Storage Mount` and create the following mapping for your mongo db store.
 
-![Asset Store settings](../../images/started/azure/storage.png)
+![MongoDb volume](../../images/started/azure/create-mongodb-volume.png)
 
-### 3.3. All settings
+## 6. All settings
 
 All basic settings:
 
 ```json
 [
   {
-    "name": "ASSETSTORE__AZUREBLOB__CONNECTIONSTRING",
-    "value": "[ADD YOUR VALUE HERE]",
-    "slotSetting": false
-  },
-  {
-    "name": "ASSETSTORE__TYPE",
-    "value": "AzureBlob",
-    "slotSetting": false
-  },
-  {
     "name": "DOCKER_REGISTRY_SERVER_URL",
     "value": "https://index.docker.io",
-    "slotSetting": false
-  },
-  {
-    "name": "EVENTSTORE__COSMOSDB__CONFIGURATION",
-    "value": "[ADD YOUR VALUE HERE]",
-    "slotSetting": false
-  },
-  {
-    "name": "EVENTSTORE__COSMOSDB__MASTERKEY",
-    "value": "[ADD YOUR VALUE HERE]",
-    "slotSetting": false
-  },
-  {
-    "name": "EVENTSTORE__TYPE",
-    "value": "CosmosDB",
     "slotSetting": false
   },
   {
@@ -101,7 +89,17 @@ All basic settings:
     "slotSetting": false
   },
   {
+    "name": "IDENTITY__GITHUBSECRET",
+    "value": "",
+    "slotSetting": false
+  },
+  {
     "name": "IDENTITY__GOOGLECLIENT",
+    "value": "",
+    "slotSetting": false
+  },
+  {
+    "name": "IDENTITY__GOOGLESECRET",
     "value": "",
     "slotSetting": false
   },
@@ -111,17 +109,22 @@ All basic settings:
     "slotSetting": false
   },
   {
-    "name": "STORE__MONGODB__CONFIGURATION",
-    "value": "[ADD YOUR VALUE HERE]",
-    "slotSetting": false
-  },
-  {
-    "name": "STORE__MONGODB__ISCOSMOSDB",
-    "value": "true",
+    "name": "IDENTITY__MICROSOFTSECRET",
+    "value": "",
     "slotSetting": false
   },
   {
     "name": "URLS__BASEURL",
+    "value": "[ADD YOUR VALUE HERE]",
+    "slotSetting": false
+  },
+  {
+    "name": "URLS__ENFORCEHTTPS",
+    "value": "true",
+    "slotSetting": false
+  },
+  {
+    "name": "VIRTUAL_HOST",
     "value": "[ADD YOUR VALUE HERE]",
     "slotSetting": false
   },
