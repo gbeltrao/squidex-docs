@@ -34,7 +34,7 @@ Go to your app service and scroll down to menu item `App Service logs` and turn 
 
 ![Enable logging](../../images/started/azure/logging.png)
 
-## 3. Configure your Storage Account
+## 3. Configure your storage account
 
 Go to your storage account instance, choose `Files` and create two file shares.
 
