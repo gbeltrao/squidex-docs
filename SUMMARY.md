@@ -28,6 +28,7 @@
 ## Next
 
 * [Roadmap](03-next/01-roadmap.md)
+* [API Compatibility](03-next/02-api-compatibility.md)
 
 ## Guides
 

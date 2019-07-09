@@ -104,7 +104,7 @@ Lets have a look to the update script:
 
 ```jscript
 // Our code for the Creator
-if (ctx.user.role.indexOf('Creator')) {
+if (ctx.user.claims.role.indexOf('Creator')) {
     // Check the old status of our content.
     if (ctx.oldData.status.iv !== 'Draft' && ctx.oldData.status.iv !== 'Rejected') {
         disallow('You are not allowed to edit content that has been published already.');
