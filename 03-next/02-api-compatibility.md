@@ -74,7 +74,7 @@ Example: When you upload an asset, the API checks if the same asset has already 
     "fileName": "Logo.jpeg",
     "fileSize": 1024,
     "_links": {
-        "delete": { "method": "DELETE", "href": "/api/assewts/1" }
+        "delete": { "method": "DELETE", "href": "/api/assets/1" }
     },
     "_meta": {
         "isDuplicate": "1"
