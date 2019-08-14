@@ -106,7 +106,7 @@ Some sample paths
 * `data.personName` (`iv` is added by default for non-localized fields)
 * `personName=data.personName` (Column name for non-localized field).
 
-Not from the example above:
+More exeamples (not from the example operation above):
 
 * `data.text.en` (Localized field)
 * `data.hobbies.iv.0.name`(For array of objects)
@@ -143,12 +143,12 @@ Some sample paths
 * `personName.iv=personName` 
 * `personName` (`iv` is added by default for non-localized fields)
 
-Not from the example above:
+More exeamples (not from the example operation above):
 
-* `data.text.en=text` (Localized field)
-* `data.hobbies.iv.0.name=firstHobby`(For array of objects)
-* `data.hobbies.iv=hobbies`(To serialize the whole array to a string)
-* `data.json.iv.property=jsonProperty` (For a nested object)
-* `data.json.iv=json` (To serialize the whole object to a string)
+* `text.en=text` (Localized field)
+* `hobbies.iv.0.name=firstHobby`(For array of objects)
+* `hobbies.iv=hobbies`(To serialize the whole array to a string)
+* `json.iv.property=jsonProperty` (For a nested object)
+* `json.iv=json` (To serialize the whole object to a string)
 
 If the extract value is a json array of object it will be serialized to a string.

@@ -63,7 +63,7 @@ Please check the logs to see detailed error messages.
 
 ### Login screen shows 'Operation failed' message.
 
-Typically the login fails, because the `urls:baseUrl` setting has an invalid value. Ensure that the domain that is used by your users. Squidex mght run behind several other servers like Cloudflare, LoadBalanchers and reverse proxies and does not know the full domain. Therefore we must configure the URL.
+Typically the login fails, because the `urls:baseUrl` setting has an invalid value. Ensure that the domain that is used by your users is configured here. Squidex mght run behind several other servers like Cloudflare, load balancers and reverse proxies and does not know the original domain. Therefore we must configure the URL.
 
 ### I see the login screen but I cannot login.
 

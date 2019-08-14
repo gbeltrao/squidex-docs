@@ -11,12 +11,9 @@ Before you start you have to setup a few things first:
 1. A resource group for all your squidex resources.
 2. A service plan to host squidex (Linux).
 3. A storage account for your assets and mongo db (general purpose v1 or v2).
+4. [Azure-CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) installed.
 
 ## 1. Create the web app
-
-You can find the docker-compose configurations for Azure here:
-
-> https://github.com/Squidex/squidex-docker/blob/master/standalone
 
 Create a new web app with the following `Basics`:
 
@@ -36,11 +33,28 @@ Go to your app service and scroll down to menu item `App Service logs` and turn 
 
 ## 3. Configure your storage account
 
-Go to your storage account instance, choose `Files` and create two file shares.
+Go to your storage account instance, choose `Files` and create a file share named 'etc-squidex-mongodb'.
 
-![Store Account settings](../../images/started/azure/storage.png)
+Choose `Blobs` and create a container named 'etc-squidex-assets'.
 
-## 4. Configure your application
+Choose `Access Keys` and copy one of the keys for the setup of the MongoDB and one Connection String for the setup of the squidex asset store.
+
+## 4. Create the container instance
+
+The following setup of the container instance can only be done using the azure-cli at the moment. Open a terminal, login to azure using _az login_ and run the following command. 
+
+```
+  az container create --resource-group [YOUR VALUE HERE] --name mongodb --image mongo --azure-file-volume-account-name [YOUR VALUE HERE] --azure-file-volume-account-key "[YOUR VALUE HERE]" --azure-file-volume-share-name etc-squidex-mongodb --azure-file-volume-mount-path "/data/mongoaz" --ports 27017 --cpu 2 --ip-address public --memory 2 --os-type Linux --protocol TCP --command-line "mongod --dbpath=/data/mongoaz --bind_ip_all"
+```
+
+This will create a container Instance with a single container running mongo db. 
+
+> **IMPORTANT**: At this point your MongoDB will run without authentication. Connect to it with a Tool of your choice like [Robo 3T](https://robomongo.org/) and create an admin user. After that run the above command again, but change the _--command-line_ argument to 
+```
+"mongod --dbpath=/data/mongoaz --bind_ip_all --auth"
+```
+
+## 5. Configure your application
 
 Go to the `Configuration section` and choose `Application settings` to configure squidex.
 
@@ -48,19 +62,7 @@ Go to the `Configuration section` and choose `Application settings` to configure
 
 ![All configuration values](../../images/started/azure/configuration.png)
 
-Sensitive values are hidden, but configuration values for external authentication providers are empty to turn them off.
-
-## 5. Configure your volumes
-
-Go to the `Configuration section` and choose `Path mappings` to configure volumes.
-
-Click `New Azure Storage Mount` and create the following mapping for your assets store.
-
-![Assets volume](../../images/started/azure/create-asset-volume.png)
-
-Click `New Azure Storage Mount` and create the following mapping for your mongo db store.
-
-![MongoDb volume](../../images/started/azure/create-mongodb-volume.png)
+Configuration values for external authentication providers are empty to turn them off.
 
 ## 6. All settings
 
@@ -69,18 +71,48 @@ All basic settings:
 ```json
 [
   {
+    "name": "ASSETSTORE__AZUREBLOB__CONNECTIONSTRING",
+    "value": "[YOUR VALUE HERE]",
+    "slotSetting": false
+  },
+  {
+    "name": "ASSETSTORE__AZUREBLOB__CONTAINERNAME",
+    "value": "etc-squidex-assets",
+    "slotSetting": false
+  },
+  {
+    "name": "ASSETSTORE__TYPE",
+    "value": "AzureBlob",
+    "slotSetting": false
+  },
+  {
+    "name": "DOCKER_REGISTRY_SERVER_PASSWORD",
+    "value": "",
+    "slotSetting": false
+  },
+  {
     "name": "DOCKER_REGISTRY_SERVER_URL",
     "value": "https://index.docker.io",
     "slotSetting": false
   },
   {
+    "name": "DOCKER_REGISTRY_SERVER_USERNAME",
+    "value": "",
+    "slotSetting": false
+  },
+  {
+    "name": "EVENTSTORE__MONGODB__CONFIGURATION",
+    "value": "mongodb://[YOUR ADMIN]:[YOUR PASSWORD]@[YOUR IP]:27017",
+    "slotSetting": false
+  },
+  {
     "name": "IDENTITY__ADMINEMAIL",
-    "value": "[ADD YOUR VALUE HERE]",
+    "value": "hello@squidex.io",
     "slotSetting": false
   },
   {
     "name": "IDENTITY__ADMINPASSWORD",
-    "value": "[ADD YOUR VALUE HERE]",
+    "value": "[YOUR VALUE HERE]",
     "slotSetting": false
   },
   {
@@ -114,23 +146,23 @@ All basic settings:
     "slotSetting": false
   },
   {
-    "name": "URLS__BASEURL",
-    "value": "[ADD YOUR VALUE HERE]",
+    "name": "STORE__MONGODB__CONFIGURATION",
+    "value": "mongodb://[YOUR ADMIN]:[YOUR PASSWORD]@[YOUR IP]:27017",
     "slotSetting": false
   },
   {
-    "name": "URLS__ENFORCEHTTPS",
-    "value": "true",
+    "name": "URLS__BASEURL",
+    "value": "https://squidex-test.azurewebsites.net/",
     "slotSetting": false
   },
   {
     "name": "VIRTUAL_HOST",
-    "value": "[ADD YOUR VALUE HERE]",
+    "value": "squidex-test.azurewebsites.net",
     "slotSetting": false
   },
   {
-    "name": "WEBSITES_ENABLE_APP_SERVICE_STORAGE",
-    "value": "false",
+    "name": "WEBSITE_HTTPLOGGING_RETENTION_DAYS",
+    "value": "10",
     "slotSetting": false
   }
 ]
