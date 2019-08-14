@@ -12,7 +12,7 @@ Lets assume you have an app `geodata` with two languages (en, de) and a schema `
 Then your content has the following structure in the API:
 
 ```json
-{ 
+{
     "id": "01",
     "created": "2017-02-25T19:56:35Z",
     "createdBy": "...",
@@ -85,7 +85,7 @@ with the validation set to only allow a single element.
 To find only those `term` items which belong to `vocabulary` with id `e46aca5e-5067-408f-b90f-ea441314385a` you would do the following request:
 
     https://cloud.squidex.io/api/content/testapp/term?$filter=data/vocabulary/iv eq 'e46aca5e-5067-408f-b90f-ea441314385a'
-    
+
 > Note: You can either use `$search` or `$filter` but not both.
 
 #### More examples
@@ -135,6 +135,10 @@ Combine different conditions:
     $filter=contains(lastName, 'Duck') eq false and isComicFigure eq true // AND: Both condition must be true
     $filter=contains(lastName, 'Duck') eq false or  isComicFigure eq true // OR: One condition must be true
 
+#### Encoding 
+
+Single quotes (`'`) in text values must be replaced with double single quotes (`''`).
+
 ### $orderby
 
 The $orderby system query option allows clients to request resources in a particular order.
@@ -144,7 +148,6 @@ e.g. find the top 20 biggest cities by population:
     https://cloud.squidex.io/api/content/geodata/cities?$orderby=data/population/iv desc$top=20
 
 Read more about OData at: http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part2-url-conventions.html
-
 
 ## Published
 
