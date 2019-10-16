@@ -1,6 +1,6 @@
-# Introduction
+# What is Squidex?
 
-![Squidex Logo](.gitbook/assets/logo-wide.png)
+![Squidex Logo](../.gitbook/assets/logo-wide.png)
 
 ## What is Squidex??
 
@@ -12,6 +12,8 @@ Squidex is a content management hub to manage all your content, for example:
 * Blog posts and articles for your website.
 * Configuration data for your backend.
 * Rich and structured data for your application.
+
+{% page-ref page="readme.md" %}
 
 ### How does it work?
 

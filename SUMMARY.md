@@ -1,49 +1,51 @@
-# Summary
+# Table of contents
+
+* [Introduction](README.md)
 
 ## Introduction
 
-* [What is Squidex?](README.md)
+* [What is Squidex?](introduction/readme.md)
 
 ## Getting Started
 
-* [Installation](01-getting-started/03-installation.md)
-* [Install with IIS](01-getting-started/installation/install-windows-iis.md)
-* [Install with Docker](01-getting-started/installation/install-docker.md)
-* [Install on Azure](01-getting-started/installation/install-azure.md)
-* [Install Identity](01-getting-started/identity/use-squidex-identity.md)
-* [Configuration](01-getting-started/installation/configuration.md)
+* [Installation](getting-started/03-installation.md)
+* [Install with IIS](getting-started/install-windows-iis.md)
+* [Install with Docker](getting-started/install-docker.md)
+* [Install on Azure](getting-started/install-azure.md)
+* [Install Identity](getting-started/use-squidex-identity.md)
+* [Configuration](getting-started/configuration.md)
 
 ## Development
 
-* [Building](01-getting-started/02-building.md)
-* [Developing](01-getting-started/01-developing.md)
+* [Building](development/02-building.md)
+* [Developing](development/01-developing.md)
 
 ## Concepts
 
-* [Schemas](04-concepts/schemas.md)
-* [Localization](04-concepts/localization.md)
-* [Permissions](04-concepts/permissions.md)
-* [Rules](04-concepts/rules.md)
+* [Schemas](concepts/schemas.md)
+* [Localization](concepts/localization.md)
+* [Permissions](concepts/permissions.md)
+* [Rules](concepts/rules.md)
 
 ## Next
 
-* [Roadmap](03-next/01-roadmap.md)
-* [API Compatibility](03-next/02-api-compatibility.md)
+* [Roadmap](next/01-roadmap.md)
+* [API Compatibility](next/02-api-compatibility.md)
 
 ## Guides
 
-* [CLI](06-guides/01-cli.md)
-* [API](06-guides/02-api.md)
-* [Postman](06-guides/04-postman.md)
-* [Troubleshooting](06-guides/03-troubleshooting.md)
-* [Assets](06-guides/05-assets.md)
-* [Scripting](06-guides/06-scripting.md)
-* [Custom Editors](06-guides/07-custom-editors.md)
-* [Custom Workflows](06-guides/10-workflow.md)
-* [Preview Content](06-guides/09-preview.md)
-
+* [CLI](guides/01-cli.md)
+* [API](guides/02-api.md)
+* [Postman](guides/04-postman.md)
+* [Troubleshooting](guides/03-troubleshooting.md)
+* [Assets](guides/05-assets.md)
+* [Scripting](guides/06-scripting.md)
+* [Custom Editors](guides/07-custom-editors.md)
+* [Custom Workflows](guides/10-workflow.md)
+* [Preview Content](guides/09-preview.md)
 
 ## Architecture
 
-* [Overview](02-architecture/01-overview.md)
-* [Extensions](02-architecture/02-extensions.md)
+* [Overview](architecture/01-overview.md)
+* [Extensions](architecture/02-extensions.md)
+
