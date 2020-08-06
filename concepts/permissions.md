@@ -16,7 +16,7 @@ Squidex uses a fine granular permission system. Permissions are defined with a d
 
 `{app}` and `{schema}` are placeholder that will be replaced with your current app name or schema name.
 
-The full list of permissions can be found here: [https://github.com/Squidex/squidex/blob/master/src/Squidex.Shared/Permissions.cs](https://github.com/Squidex/squidex/blob/master/src/Squidex.Shared/Permissions.cs)
+The full list of permissions can be found here: [https://github.com/Squidex/squidex/blob/master/backend/src/Squidex.Shared/Permissions.cs](https://github.com/Squidex/squidex/blob/master/backend/src/Squidex.Shared/Permissions.cs)
 
 The system is expressed as a hierarchy. If you visualize them as a tree you get the following structure
 
